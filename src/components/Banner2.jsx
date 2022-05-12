@@ -9,7 +9,7 @@ const Banner2 = () => {
         <Container>
             <Row md={2} className="banner-rt d-flex align-items-md-center">
 
-                <Col className="banner-rt_image">
+                <Col xs={{order: 2}} lg={{order: 1}} className="banner-rt_image">
                     <img src={require("../images/mobile-0819.jpg")} alt="mobile" />
 
                     <div className="download-card">
@@ -21,7 +21,7 @@ const Banner2 = () => {
                     </div>
                 </Col>
 
-                <Col className="banner-rt_text">
+                <Col xs={{order: 1}} lg={{order: 2}} className="banner-rt_text">
                     <div>
                         <h2>
                             Scarica le tue serie da guardare offline.

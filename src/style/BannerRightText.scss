@@ -27,12 +27,6 @@
             z-index: 20;
         }
 
-        video {
-            height: 237px;
-            position: absolute;
-            transform: translate(-2px, 43px);
-        }
-
         .download-card {
             height: 105px;
             border: 2px solid #ffffff40;
@@ -52,9 +46,15 @@
 }
 
 .banner-rt.kids {
-    height: 490px;
-
     .banner-rt_image {
         height: 420px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner-rt_text {
+        div {
+            padding: 0;
+        }
     }
 }

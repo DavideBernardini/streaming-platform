@@ -11,7 +11,7 @@ const TestoCentrale = () => {
                 <p className="sottoTitolo2 z-index-max">Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.</p>
 
             </Container>
-            <div  style={{width:"650px", height:"70px", margin:"auto"}}>
+            <div id="email-form">
                 <InputGroup className="mb-3 p-3 d-flex flex-nowrap z-index-max">
                     <FormControl className="p-3"
                         placeholder="Indirizzo email"

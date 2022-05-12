@@ -1,5 +1,6 @@
 .banner-lt {
     padding: 40px 0;
+
     &_text {
         div {
             padding-left: 80px;
@@ -28,13 +29,25 @@
         }
 
         video {
-            height: 237px;
+            height: 218px;
             position: absolute;
-            transform: translate(-2px, 43px);
+            transform: translate(-2px, 69px);
         }
     }
 }
 
 .banner-lt.devices {
-    height: 480px;
+    video {
+        height: 237px;
+        position: absolute;
+        transform: translate(-2px, 44px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner-lt_text {
+        div {
+            padding: 0;
+        }
+    }
 }
