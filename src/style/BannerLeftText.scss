@@ -1,0 +1,36 @@
+.banner-lt {
+    height: 460px;
+    &_text {
+        div {
+            padding-left: 80px;
+            h2 {
+                font-size: 49px;
+                font-weight: 600;
+                padding-bottom: 10px;
+            }
+            p {
+                font-size: 25px;
+            }  
+        }
+    }
+    &_image {
+        height: 390px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        img {
+            height: 100%;
+            z-index: 20;
+        }
+        video {
+            height: 204px;
+            width: 362px;
+            position: absolute;
+            transform: translate(-2px, 76px);
+        }
+    }
+}
+
+.banner-lt.devices {
+    height: 480px;
+}
