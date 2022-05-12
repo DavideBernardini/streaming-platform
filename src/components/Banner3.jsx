@@ -1,8 +1,6 @@
 import React from 'react';
 import '../style/BannerLeftText.scss'
 import { Row, Col, Container } from 'react-bootstrap';
-import '../images/tv.png'
-
 const Banner3 = () => {
 
     return (
@@ -22,8 +20,8 @@ const Banner3 = () => {
                 <Col className="banner-lt_image">
                     <img src={require("../images/device-pile.png")} alt="tv" />
 
-                    <video id="tv_clip2" autoplay="" muted="" loop="" playsInline="">
-                        <source src="../videos/video-devices.m4v" type="video/mp4" />
+                    <video width={"auto"} id="tv_clip2" autoPlay={true} muted="" loop="100" playsInline="">
+                        <source src={require("../videos/video3.mp4")} type="video/mp4" />
                     </video>
                 </Col>
             </Row>
