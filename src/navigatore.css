@@ -1,0 +1,15 @@
+.landingPage {
+    width: auto;
+    height: 900px;
+    background-image: url("../src/images/backgorund.png");
+    background-size: cover;
+  }
+  .testiTitolo{
+    font-size: 50px;
+  }
+  .sottoTitolo{
+    font-size: 20px;
+  }
+  .sottoTitolo2{
+    font-size: 20px;
+  }
