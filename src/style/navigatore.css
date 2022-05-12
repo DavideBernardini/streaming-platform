@@ -1,7 +1,7 @@
 .landingPage {
     width: auto;
     height: 770px;
-    background-image: url("../src/images/backgorund.png");
+    background-image: url("../images/backgorund.png");
     background-size: cover;
     position: relative;
 }

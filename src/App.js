@@ -1,6 +1,6 @@
 
 import { Container } from "react-bootstrap";
-import "./navigatore.css"
+import "./style/navigatore.css"
 import "./App.css";
 import Navigatore from "./components/navigatore"
 import TestoCentrale from "./components/testoCentrale";

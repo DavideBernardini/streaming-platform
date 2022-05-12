@@ -7,7 +7,7 @@ const Banner1 = () => {
 
     return (
         <Container>
-            <Row md={2} className="banner-lt d-flex align-items-md-center">
+            <Row xs={1} lg={2} className="banner-lt d-flex align-items-md-center">
                 <Col className="banner-lt_text">
                     <div>
                         <h2 className='testiTitolo'>
