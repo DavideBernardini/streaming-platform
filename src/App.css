@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
+
+.App {
+
+  font-family: 'Radio Canada', sans-serif;
+
+}
+
+.landingPage {
+  width: auto;
+  height: 900px;
+  background-image: url("../src/images/backgorund.png");
+  background-size: cover;
+}
+.testiTitolo{
+  font-size: 50px;
+}
+.sottoTitolo{
+  font-size: 20px;
+}
+.sottoTitolo2{
+  font-size: 20px;
+}

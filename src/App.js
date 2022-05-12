@@ -1,23 +1,20 @@
-import logo from "./logo.svg";
+
+import { Container, ContainerFluid } from "react-bootstrap";
 import "./App.css";
+import Navigatore from"./components/navigatore"
+import TestoCentrale from "./components/testoCentrale";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Prova..... Prova2... Prova3... prova4 Loris...
-        </a>
-      </header>
+    <div className="App landingPage " >
+   
+         <Navigatore/>
+         <Container className="text-center " style={{marginTop:"150px"}}>
+           <TestoCentrale/>
+         </Container>
+         
+   
+     
     </div>
   );
 }
