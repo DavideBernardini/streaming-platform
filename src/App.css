@@ -1,7 +1,13 @@
-
-// google font
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
 
 .App {
   font-family: 'Radio Canada', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.separator {
+  background-color: #222222;
+  height: 8px;
 }

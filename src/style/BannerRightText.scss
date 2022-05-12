@@ -1,0 +1,34 @@
+.banner-rt {
+    height: 450px;
+    &_text {
+        div {
+            padding-right: 80px;
+            h2 {
+                font-size: 49px;
+                font-weight: 600;
+                padding-bottom: 10px;
+            }
+            p {
+                font-size: 25px;
+            }  
+        }
+    }
+    &_image {
+        height: 390px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        img {
+            height: 100%;
+            z-index: 20;
+        }
+    }
+}
+
+.banner-rt.kids {
+    height: 490px;
+
+    .banner-rt_image {
+        height: 420px;
+    }
+}

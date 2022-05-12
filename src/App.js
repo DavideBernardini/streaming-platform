@@ -1,25 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { Container } from 'react-bootstrap';
+import Banner1 from './components/Banner1'
+import Banner2 from "./components/Banner2";
+import Banner3 from "./components/Banner3";
+import Banner4 from "./components/Banner4";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Prova..... Prova2... Prova3... prova4 Loris...
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+
+            <Banner1 />
+            <div className="separator"></div>
+            <Banner2 />
+            <div className="separator"></div>
+            <Banner3/>
+            <div className="separator"></div>
+            <Banner4/>
+            <div className="separator"></div>
+
+        </div>
+    );
 }
 
 export default App;
