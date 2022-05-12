@@ -1,5 +1,5 @@
 
-import { Container, ContainerFluid } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "./navigatore.css"
 import "./App.css";
 import Navigatore from "./components/navigatore"
@@ -12,27 +12,29 @@ import Banner4 from "./components/Banner4";
 
 
 function App() {
-  return (
-    <div className="App" >
-      <div className="landingPage">
-           <Navigatore className="landingPage" />
-      <Container className="text-center " style={{ marginTop: "150px" }}>
-        <TestoCentrale />
-      </Container>
-      </div>
-   
-      <Banner1 />
-      <div className="separator"></div>
-      <Banner2 />
-      <div className="separator"></div>
-      <Banner3 />
-      <div className="separator"></div>
-      <Banner4 />
-      <div className="separator"></div>
+    return (
+        <div className="App" >
+            <div className="landingPage">
+                
+                <Navigatore className="landingPage" />
+                <Container className="text-center " style={{ marginTop: "150px" }}>
+                    <TestoCentrale />
+                </Container>
+            </div>
+
+            <div className="separator"></div>
+            <Banner1 />
+            <div className="separator"></div>
+            <Banner2 />
+            <div className="separator"></div>
+            <Banner3 />
+            <div className="separator"></div>
+            <Banner4 />
+            <div className="separator"></div>
 
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

@@ -6,7 +6,7 @@ const Navigatore = () => {
     return (
         <Navbar bg="none" expand="lg">
             <Container fluid>
-                <Navbar.Brand><img style={{ width: "250px", height: "auto" }} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" /></Navbar.Brand>
+                <Navbar.Brand><img className="ms-5" style={{ width: "200px", height: "auto" }} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -21,7 +21,7 @@ const Navigatore = () => {
                             <option>Italiano</option>
                             <option value="1"><Globe/>English</option>
                         </Form.Select>
-                        <Button className="mx-4" variant="danger">Accedi</Button>
+                        <Button id="btn-access" className="mx-4 px-3" variant="danger">Accedi</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>

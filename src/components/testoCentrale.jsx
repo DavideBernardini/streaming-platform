@@ -1,24 +1,25 @@
 import React from "react";
-import { Container, Form, FormControl, Button, InputGroup } from "react-bootstrap";
+import { Container, FormControl, Button, InputGroup } from "react-bootstrap";
+import '../style/TestoCentrale.scss'
 
 const TestoCentrale = () => {
     return (
         <>
             <Container className="text-white  ">
-                <h1 className="testiTitolo">Film, serie TV e tanto altro. <br></br> Senza Limiti</h1>
-                <p className="sottoTitolo">Guarda ciò che vuoi ovunque. Disdici quando vuoi.</p>
-                <p className="sottoTitolo2">Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.</p>
+                <h1 className="testiTitolo z-index-max">Film, serie TV e tanto altro. <br></br> Senza Limiti</h1>
+                <p className="sottoTitolo z-index-max">Guarda ciò che vuoi ovunque. Disdici quando vuoi.</p>
+                <p className="sottoTitolo2 z-index-max">Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.</p>
 
             </Container>
-            <div  style={{width:"500px", margin:"auto"}}>
-                <InputGroup className="mb-3 p-3">
+            <div  style={{width:"650px", height:"70px", margin:"auto"}}>
+                <InputGroup className="mb-3 p-3 d-flex flex-nowrap z-index-max">
                     <FormControl className="p-3"
                         placeholder="Indirizzo email"
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                     />
                     <Button variant="danger" id="button-addon2">
-                        Inizia &gt;
+                        Inizia <span className="ms-1">&gt;</span>
                     </Button>
                 </InputGroup>
 
