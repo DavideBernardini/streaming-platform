@@ -6,7 +6,7 @@ const Navigatore = () => {
     return (
         <Navbar bg="none" expand="lg" className="flex-nowrap">
             <Container fluid>
-                <Navbar.Brand><img className="ms-3 ms-md-5" style={{ width: "200px", height: "auto" }} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" /></Navbar.Brand>
+                <Navbar.Brand><img className="ms-0 ms-sm-3 ms-md-5" style={{ width: "200px", height: "auto" }} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" /></Navbar.Brand>
                 
                 <div id="navbarScroll">
                     <Nav
