@@ -11,10 +11,10 @@ const Banner1 = () => {
                 <Col className="banner-lt_text">
                     <div>
                         <h2 className='testiTitolo'>
-                            Goditi Netflix sulla tua TV.
+                            Goditi GreenStream sulla tua TV.
                         </h2>
-                        <p>
-                            Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi.
+                        <p className='testiTitolo'>
+                            Guarda GreenStram su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi.
                         </p>
                     </div>
 

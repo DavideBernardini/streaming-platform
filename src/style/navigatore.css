@@ -1,14 +1,17 @@
 .landingPage {
     width: auto;
     height: 770px;
-    background-image: url("../images/backgorund.png");
+    background-image: url("../images/image00001(1).jpeg");
     background-size: cover;
     position: relative;
 }
 .landingPage > * {
   z-index: 10;
 }
+.titolo{
+  text-shadow: 1px 1px white;
 
+}
 .landingPage::after {
   content: '';
   position: absolute;
@@ -30,6 +33,3 @@
   font-size: 20px;
 }
 
-#btn-access {
-  background-color: #e50914;
-}

@@ -8,7 +8,7 @@ const TestoCentrale = () => {
             <Container className="text-white  ">
                 <h1 className="testiTitolo z-index-max">Film, serie TV e tanto altro. <br></br> Senza Limiti</h1>
                 <p className="sottoTitolo z-index-max">Guarda ciò che vuoi ovunque. Disdici quando vuoi.</p>
-                <p className="sottoTitolo2 z-index-max">Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.</p>
+                <p className="sottoTitolo2 z-index-max">Vuoi guardare GreenStream? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.</p>
 
             </Container>
             <div id="email-form">
@@ -18,7 +18,7 @@ const TestoCentrale = () => {
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                     />
-                    <Button variant="danger" id="button-addon2">
+                    <Button variant="success" id="button-addon2">
                         Inizia <span className="ms-1">&gt;</span>
                     </Button>
                 </InputGroup>

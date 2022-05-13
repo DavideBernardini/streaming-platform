@@ -6,7 +6,7 @@ const Navigatore = () => {
     return (
         <Navbar bg="none" expand="lg" className="flex-nowrap">
             <Container fluid>
-                <Navbar.Brand><img className="ms-0 ms-sm-3 ms-md-5" style={{ width: "200px", height: "auto" }} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" /></Navbar.Brand>
+                <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color:"#198754" }}>GreenStream</h1></Navbar.Brand>
                 
                 <div id="navbarScroll">
                     <Nav
@@ -21,7 +21,7 @@ const Navigatore = () => {
                             <option>Italiano</option>
                             <option value="1"><Globe/>English</option>
                         </Form.Select>
-                        <Button id="btn-access" className="ms-2 mx-md-4 px-3" variant="danger">Accedi</Button>
+                        <Button id="btn-access" className="ms-2 mx-md-4 px-3" variant="success">Accedi</Button>
                     </Form>
                 </div>
             </Container>

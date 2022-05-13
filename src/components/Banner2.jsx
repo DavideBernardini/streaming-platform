@@ -10,10 +10,10 @@ const Banner2 = () => {
             <Row md={2} className="banner-rt d-flex align-items-md-center">
 
                 <Col xs={{order: 2}} lg={{order: 1}} className="banner-rt_image">
-                    <img src={require("../images/mobile-0819.jpg")} alt="mobile" />
+                    <img className='mobile' src="https://mr.comingsoon.it/imgdb/locandine/big/61235.jpg"alt="mobile" />
 
                     <div className="download-card">
-                        <img src={require('../images/boxshot.png')} alt="stranger things thunb" />
+                        <img   src="https://www.exibart.com/repository/media/2019/08/milanese-imbruttito1.jpg" alt="stranger things thunb" />
 
                         <div className='ms-4 me-5'>Download in corso...</div>
 
@@ -23,10 +23,10 @@ const Banner2 = () => {
 
                 <Col xs={{order: 1}} lg={{order: 2}} className="banner-rt_text">
                     <div>
-                        <h2>
-                            Scarica le tue serie da guardare offline.
+                        <h2 className='testiTitolo'>
+                            Scarica i tuoi film da guardare offline.
                         </h2>
-                        <p>
+                        <p className='testiTitolo'>
                             Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare.
                         </p>
                     </div>

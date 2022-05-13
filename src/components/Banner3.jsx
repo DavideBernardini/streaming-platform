@@ -8,10 +8,10 @@ const Banner3 = () => {
             <Row md={2} className="banner-lt devices d-flex align-items-md-center">
                 <Col className="banner-lt_text">
                     <div>
-                        <h2>
-                            Guarda Netflix ovunque.
+                        <h2 className='testiTitolo'>
+                            Guarda GreenStream ovunque.
                         </h2>
-                        <p>
+                        <p className='testiTitolo'>
                             Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più.
                         </p>
                     </div>
