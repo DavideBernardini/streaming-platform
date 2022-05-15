@@ -3,7 +3,7 @@ import '../style/BannerRightText.scss'
 import { Row, Col, Container } from 'react-bootstrap';
 import '../images/tv.png'
 
-const Banner2 = () => {
+const Banner4 = () => {
 
     return (
         <Container>
@@ -28,4 +28,4 @@ const Banner2 = () => {
     );
 }
 
-export default Banner2;
+export default Banner4;

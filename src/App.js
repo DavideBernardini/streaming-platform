@@ -9,30 +9,23 @@ import Banner2 from "./components/Banner2";
 import Banner3 from "./components/Banner3";
 import Banner4 from "./components/Banner4";
 import Question from "./components/Question";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+
 
 
 
 function App() {
     return (
         <div className="App" >
-            <div className="landingPage">
-                
-                <Navigatore className="landingPage" />
-                <Container className="text-center " style={{ marginTop: "150px" }}>
-                    <TestoCentrale />
-                </Container>
-            </div>
-
-            <div className="separator"></div>
-            <Banner1 />
-            <div className="separator"></div>
-            <Banner2 />
-            <div className="separator"></div>
-            <Banner3 />
-            <div className="separator"></div>
-            <Banner4 />
-            <div className="separator"></div>
-            <Question/>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigatore />}>
+                    <Route index element={<LandingPage />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
 
 
         </div>
