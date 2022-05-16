@@ -6,11 +6,6 @@ import Navigatore from "./components/navigatore"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import MainPage from "./components/MainPage"
-import Footer from "./components/Footer";
-
-
-
-
 
 function App() {
     return (
@@ -24,8 +19,6 @@ function App() {
                     </Route>
                 </Routes>
             </BrowserRouter>
-            <Footer/>
-
         </div>
     );
 }

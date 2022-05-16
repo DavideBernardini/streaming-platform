@@ -25,9 +25,11 @@ const MainPage = () => {
                 console.log(horrorMovies);
             })
     };
+
+
     return (
         <div className="text-center">
-            <MoviesRow category="Horror" />
+            <MoviesRow category="Horror" movies={horrorMovies} />
         </div>
     )
 }
