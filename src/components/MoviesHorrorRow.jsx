@@ -1,11 +1,9 @@
 import React from "react";
 
-const MainPage = () => {
+const MoviesHorrorRow = () => {
     return(
         <>
         
         </>
     )
 }
-
-export default MainPage;
