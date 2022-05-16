@@ -1,5 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
+import { Spinner } from "react-bootstrap";
+// react-slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const MoviesRow = (props) => {
     var settings = {
@@ -37,22 +41,25 @@ const MoviesRow = (props) => {
         ]
     };
     return (
-        props.movies &&
+
         <div>
             <h2>{props.category}</h2>
+            {
+                props.movies ?
+                    <Slider {...settings}>
+                        {
+                            props.movies.map(movie => {
+                                return (
+                                    <h3 className="text-white" key={movie.id}>
+                                        {movie.title}
+                                    </h3>
+                                )
+                            })
+                        }
 
-            <Slider {...settings}>
-                {
-                    props.movies.map(movie => {
-                        return(
-                        <h3 className="text-white" key={movie.id}>
-                            {movie.title}
-                        </h3>
-                        )
-                    })
-                }
-
-            </Slider>
+                    </Slider>
+                : <Spinner className="text-center" animation="grow" variant="success" />
+            }
         </div>
     );
 }
