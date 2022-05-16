@@ -8,16 +8,16 @@ import Banner4 from "./Banner4";
 
 import { Container } from "react-bootstrap";
 
-const LandingPage = () =>{
-    return(
+const LandingPage = () => {
+    return (
         <>
-        
-        <div className="landingPage">
-            <Container className="text-center " style={{ marginTop: "150px" }}>
-                <TestoCentrale />
-            </Container>
-        </div>
-        <div className="separator"></div>
+
+            <div className="landingPage">
+                <Container className="text-center " style={{ marginTop: "150px" }}>
+                    <TestoCentrale />
+                </Container>
+            </div>
+            <div className="separator"></div>
             <Banner1 />
             <div className="separator"></div>
             <Banner2 />
@@ -26,7 +26,6 @@ const LandingPage = () =>{
             <div className="separator"></div>
             <Banner4 />
             <div className="separator"></div>
-           
         </>
     )
 }
