@@ -10,7 +10,11 @@ const Navigatore = () => {
         <Navbar bg="none" expand="lg" className="flex-nowrap">
             <Container fluid>
                 <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color:"#198754" }}>GreenStream</h1></Navbar.Brand>
-                
+                <ul>
+                    <li>
+                        <Link to="/mainPage">Movie & Series</Link>
+                    </li>
+                </ul>
                 <div id="navbarScroll">
                     <Nav
                         className="me-auto my-2 my-lg-0"

@@ -13,8 +13,6 @@ const LandingPage = () =>{
         <>
         
         <div className="landingPage">
-            
-            <Navigatore className="landingPage" />
             <Container className="text-center " style={{ marginTop: "150px" }}>
                 <TestoCentrale />
             </Container>
