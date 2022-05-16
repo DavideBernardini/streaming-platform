@@ -1,5 +1,4 @@
 import React from "react";
-import Navigatore from "./navigatore";
 import TestoCentrale from "./testoCentrale";
 import Banner1 from "./Banner1";
 import Banner2 from "./Banner2";
