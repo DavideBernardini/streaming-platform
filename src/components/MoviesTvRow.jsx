@@ -4,8 +4,9 @@ import { Spinner } from "react-bootstrap";
 // react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Container } from "react-bootstrap";
 
-const MoviesRow = (props) => {
+const MoviesTvRow = (props) => {
     var settings = {
         dots: true,
         infinite: false,
@@ -42,26 +43,36 @@ const MoviesRow = (props) => {
     };
     return (
 
-        <div>
-            <h2>{props.category}</h2>
+        <Container >
+            <div className="fs-2">{props.category}</div>
             {
-                props.movies ?
+                props.moviesOrTv ?
                     <Slider {...settings}>
                         {
-                            props.movies.map(movie => {
-                                return (
-                                    <h3 className="text-white" key={movie.id}>
-                                        {movie.title}
-                                    </h3>
-                                )
-                            })
+                            props.moviesOrTv[0].title ?
+                                // movies
+                                props.moviesOrTv.map(movie => {
+                                    return (
+                                        <h3 className="text-white" key={movie.id}>
+                                            {movie.title}
+                                        </h3>
+                                    )
+                                }) :
+                                // tv shows
+                                props.moviesOrTv.map(tv => {
+                                    return (
+                                        <h3 className="text-white" key={tv.id}>
+                                            {tv.name}
+                                        </h3>
+                                    )
+                                })
                         }
 
                     </Slider>
-                : <Spinner className="text-center" animation="grow" variant="success" />
+                    : <Spinner animation="grow" variant="success" className="my-5"/>
             }
-        </div>
+        </Container>
     );
 }
 
-export default MoviesRow;
+export default MoviesTvRow;
