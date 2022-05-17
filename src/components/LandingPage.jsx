@@ -9,7 +9,7 @@ import '../style/navigatore.css'
 
 const LandingPage = () => {
     return (
-        <>
+        <div className="landing-page">
             <div className="hero d-flex align-items-center justify-content-center">
                 <div className="text-center">
                     <TestoCentrale />
@@ -25,7 +25,7 @@ const LandingPage = () => {
             <Banner4 />
             <div className="separator"></div>
             <Footer/>
-        </>
+        </div>
     )
 }
 

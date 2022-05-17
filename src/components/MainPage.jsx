@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MoviesTvRow from "./MoviesTvRow";
 import CercaFilm from "./CercaFilm";
-
+import '../style/MainPage.scss'
 
 
 const MainPage = () => {
