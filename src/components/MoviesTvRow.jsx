@@ -1,18 +1,20 @@
 import React from "react";
 import Slider from "react-slick";
 import { Spinner } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import '../style/MoviesTvRows.scss'
 // react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container } from "react-bootstrap";
+
 
 const MoviesTvRow = (props) => {
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         initialSlide: 0,
         responsive: [
             {
@@ -21,7 +23,6 @@ const MoviesTvRow = (props) => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
                 }
             },
             {
@@ -53,23 +54,26 @@ const MoviesTvRow = (props) => {
                                 // movies
                                 props.moviesOrTv.map(movie => {
                                     return (
-                                        <h3 className="text-white" key={movie.id}>
+                                        <div className="movie-tv-card" key={movie.id}>
                                             {movie.title}
-                                        </h3>
+                                        </div>
                                     )
                                 }) :
                                 // tv shows
                                 props.moviesOrTv.map(tv => {
                                     return (
-                                        <h3 className="text-white" key={tv.id}>
+                                        <div className="movie-tv-card" key={tv.id}>
                                             {tv.name}
-                                        </h3>
+                                        </div>
                                     )
                                 })
                         }
 
                     </Slider>
-                    : <Spinner animation="grow" variant="success" className="my-5"/>
+                    : <div className="my-5 text-center">
+                        <Spinner animation="grow" variant="success"/>
+                    </div>
+                    
             }
         </Container>
     );
