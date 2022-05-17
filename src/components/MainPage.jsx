@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MoviesRow from "./MoviesRow";
-
+import CercaFilm from "./CercaFilm";
 
 
 
@@ -29,6 +29,7 @@ const MainPage = () => {
 
     return (
         <div className="text-center">
+            <CercaFilm />
             <MoviesRow category="Horror" movies={horrorMovies} />
         </div>
     )
