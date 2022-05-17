@@ -101,6 +101,9 @@ const MainPage = () => {
 
     return (
         <div>
+            <h1>1</h1>
+            <h1>2</h1>
+            <h1>3</h1>
             <CercaFilm />
             {/* movie rows */}
             <MoviesTvRow category="Azione:" moviesOrTv={actionMovies} />
