@@ -102,15 +102,15 @@ const MainPage = () => {
     return (
         <div>
             {/* movie rows */}
-            <MoviesTvRow category="Azione:" movies={actionMovies} />
-            <MoviesTvRow category="Commedie:" movies={comedyMovies} />
-            <MoviesTvRow category="Horror:" movies={horrorMovies} />
-            <MoviesTvRow category="Animazione:" movies={animationMovies} />
+            <MoviesTvRow category="Azione:" moviesOrTv={actionMovies} />
+            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies} />
+            <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} />
+            <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} />
             {/* movie rows */}
-            <MoviesTvRow category="Fantascienza e Fantasy:" movies={fantasyTv} />
-            <MoviesTvRow category="Commedie:" movies={comedyTv} />
-            <MoviesTvRow category="Drama:" movies={dramaTv} />
-            <MoviesTvRow category="Reality:" movies={realityTv} />
+            <MoviesTvRow category="Fantascienza e Fantasy:" moviesOrTv={fantasyTv} />
+            <MoviesTvRow category="Commedie:" moviesOrTv={comedyTv} />
+            <MoviesTvRow category="Drama:" moviesOrTv={dramaTv} />
+            <MoviesTvRow category="Reality:" moviesOrTv={realityTv} />
         </div>
     )
 }
