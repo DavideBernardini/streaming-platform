@@ -12,7 +12,7 @@ const Navigatore = () => {
 
     return (
         <>
-            <Navbar bg="none" expand="lg" className="flex-nowrap">
+            <Navbar bg="none" expand="lg" className="navbar flex-nowrap top-0 position-fixed w-100 bg-black">
                 <Container fluid>
                     <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color: "#198754" }}>GreenStream</h1></Navbar.Brand>
                     <ul>

@@ -5,17 +5,15 @@ import Banner2 from "./Banner2";
 import Banner3 from "./Banner3";
 import Banner4 from "./Banner4";
 import Footer from "./Footer";
-
-import { Container } from "react-bootstrap";
+import '../style/navigatore.css'
 
 const LandingPage = () => {
     return (
         <>
-
-            <div className="landingPage">
-                <Container className="text-center " style={{ marginTop: "150px" }}>
+            <div className="hero d-flex align-items-center justify-content-center">
+                <div className="text-center">
                     <TestoCentrale />
-                </Container>
+                </div>
             </div>
             <div className="separator"></div>
             <Banner1 />
