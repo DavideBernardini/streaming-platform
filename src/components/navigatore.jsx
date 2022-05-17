@@ -85,8 +85,8 @@ const Navigatore = () => {
                         Registrati
                     </Button>
                     <Button variant="success" onClick={handleClose}>
-                        Accedi
-                    </Button>
+                       
+                        <Link style={{textDecoration:"none",color:"white"}} to="/mainPage"> Accedi</Link></Button>
                 </Modal.Footer>
             </Modal>
 
