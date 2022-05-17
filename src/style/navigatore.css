@@ -1,18 +1,21 @@
-.landingPage {
+.navbar {
+  z-index: 100;
+}
+.hero {
     width: auto;
     height: 770px;
     background-image: url("../images/image00001(1).jpeg");
     background-size: cover;
     position: relative;
 }
-.landingPage > * {
+.hero > * {
   z-index: 10;
 }
 .titolo{
   text-shadow: 1px 1px white;
 
 }
-.landingPage::after {
+.hero::after {
   content: '';
   position: absolute;
   width: 100%;
