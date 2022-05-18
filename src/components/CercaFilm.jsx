@@ -56,12 +56,12 @@ const CercaFilm = () => {
 
     return (
         <div className="text-center">
-            <Form.Select onChange={handleChangeType}>
+            <Form.Select className="mb-3" style={{width:'200px', textAlign:'center',margin:'auto',padding:'5px'}} onChange={handleChangeType}>
                 <option value="movie">Film</option>
                 <option value="tv">Serie Tv</option>
             </Form.Select>
 
-            <input type="text" onChange={handleChange} />
+            <input type="text" style={{width:'200px', textAlign:'center',margin:'auto',padding:'5px'}} placeholder="Search" onChange={handleChange} />
    
         
             <Container fluid  style={{padding:'30px'}}>

@@ -6,6 +6,8 @@ import CercaFilm from "./CercaFilm";
 import '../style/MainPage.scss'
 
 
+
+
 const MainPage = () => {
 
     // base urls
@@ -124,6 +126,7 @@ const MainPage = () => {
     return (
         <div className="main-page">
             <CercaFilm />
+       
             {/* movie rows */}
             <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek} />
             <MoviesTvRow category="Azione:" moviesOrTv={actionMovies} />

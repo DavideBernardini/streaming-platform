@@ -15,12 +15,6 @@ const Navigatore = () => {
             <Navbar bg="none" expand="lg" className="navbar flex-nowrap top-0 position-fixed w-100 bg-black py-1">
                 <Container fluid>
                     <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color: "#198754" }}>GreenStream</h1></Navbar.Brand>
-                    <ul>
-                        <li>
-                            <Link to="/mainPage">Movie & Series</Link>
-                            
-                        </li>
-                    </ul>
                     <div id="navbarScroll">
                         <Nav
                             className="me-auto my-2 my-lg-0"
@@ -88,7 +82,7 @@ const Navigatore = () => {
                     </Button>
                     <Button variant="success" onClick={handleClose}>
                        
-                        <Link style={{textDecoration:"none",color:"white"}} to="/mainPage"> Accedi</Link></Button>
+                        <Link style={{textDecoration:"none",color:"white"}} to="/selectUtente"> Accedi</Link></Button>
                 </Modal.Footer>
             </Modal>
 
