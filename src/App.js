@@ -1,5 +1,5 @@
 import "./App.css";
-import Navigatore from "./components/navigatore"
+import Navigatore from "./components/Navigatore"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import MainPage from "./components/MainPage"

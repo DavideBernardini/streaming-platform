@@ -1,6 +1,9 @@
 .navbar {
   z-index: 100;
 }
+.landing-page {
+  margin-top: 85.6px;
+}
 .hero {
     width: auto;
     height: 770px;
