@@ -11,6 +11,8 @@ const MainPage = () => {
     // base urls
     const discoverMovieUrl = "http://localhost:2000/api/movie/search/";
     const discoverTvUrl = "http://localhost:2000/api/tv/search/";
+    const trendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week"
+    const trendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week"
 
     // ids
     const idHorrorMovies = 27;
@@ -23,11 +25,13 @@ const MainPage = () => {
     const idRealityTv = 10764;
 
     // movies
+    let[trendsMoviesOfWeek , setTrendsMoviesOfWeek] = useState(null)
     let [horrorMovies, setHorrorMovies] = useState(null);
     let [comedyMovies, setComedyMovies] = useState(null);
     let [animationMovies, setAnimationMovies] = useState(null);
     let [actionMovies, setActionMovies] = useState(null);
     // tv shows
+    let[trendsTvOfWeek , setTrendsTvOfWeek] = useState(null)
     let [fantasyTv, setFantasyTv] = useState(null);
     let [comedyTv, setComedyTv] = useState(null);
     let [dramaTv, setDramaTv] = useState(null);
@@ -35,11 +39,13 @@ const MainPage = () => {
 
     useEffect(() => {
 
+        fetchTrendsMovies()
         fetchHorrorMovies();
         fetchComedyMovies();
         fetchActionMovies();
         fetchAnimationMovies();
 
+        fetchTrendsTv()
         fetchFantasyTv();
         fetchComedyTv();
         fetchDramaTv();
@@ -48,12 +54,21 @@ const MainPage = () => {
     }, [])
 
     // fetch movies
+    const fetchTrendsMovies = () => {
+        axios.get(trendsMoviesWeek)
+            .then((response) => {
+                setTrendsMoviesOfWeek(response.data)
+            })
+    };
+
     const fetchHorrorMovies = () => {
         axios.get(discoverMovieUrl + idHorrorMovies)
             .then((response) => {
                 setHorrorMovies(response.data)
             })
     };
+
+    
     const fetchComedyMovies = () => {
         axios.get(discoverMovieUrl + idComedyMovies)
             .then((response) => {
@@ -73,7 +88,14 @@ const MainPage = () => {
             })
     };
 
+
     // fetch tv shows
+    const fetchTrendsTv = () => {
+        axios.get(trendsTvWeek)
+            .then((response) => {
+                setTrendsTvOfWeek(response.data)
+            })
+    };
     const fetchFantasyTv = () => {
         axios.get(discoverTvUrl + idFantasyTv)
             .then((response) => {
@@ -103,15 +125,18 @@ const MainPage = () => {
         <div>
             <CercaFilm />
             {/* movie rows */}
+            <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek} />
             <MoviesTvRow category="Azione:" moviesOrTv={actionMovies} />
             <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies} />
             <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} />
             <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} />
             {/* movie rows */}
+            <MoviesTvRow category="TrendsTv:" moviesOrTv={trendsTvOfWeek} />
             <MoviesTvRow category="Fantascienza e Fantasy:" moviesOrTv={fantasyTv} />
             <MoviesTvRow category="Commedie:" moviesOrTv={comedyTv} />
             <MoviesTvRow category="Drama:" moviesOrTv={dramaTv} />
             <MoviesTvRow category="Reality:" moviesOrTv={realityTv} />
+
         </div>
     )
 }
