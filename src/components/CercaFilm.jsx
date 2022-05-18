@@ -64,7 +64,7 @@ const CercaFilm = () => {
             <input type="text" onChange={handleChange} />
    
         
-            <Container>
+            <Container fluid  style={{padding:'30px'}}>
                 <Row xs={5}>
                         {           
                             
@@ -77,9 +77,9 @@ const CercaFilm = () => {
                                     {item.title}
                                     {
                                         item.poster_path ?
-                                        <CardFilm key={index} name={item.title} img={"https://image.tmdb.org/t/p/original" + item.poster_path} />
+                                        <CardFilm style={{ width:'100%',height:'100%'}} key={index} name={item.title} img={"https://image.tmdb.org/t/p/original" + item.poster_path} />
                                         :
-                                        <CardFilm key={index} name={item.title} img={require("../images/test-foto.jpg")} />
+                                        <CardFilm style={{ width:'100%',height:'100%'}} key={index} name={item.title} img={require("../images/test-foto.jpg")} />
                                     }  
                                 </Col>
                                 :
@@ -87,9 +87,9 @@ const CercaFilm = () => {
                                     {item.name}
                                     {
                                         item.poster_path ?
-                                        <CardFilm key={index} name={item.name} img={"https://image.tmdb.org/t/p/original" + item.poster_path} />
+                                        <CardFilm style={{ width:'100%',height:'100%'}} key={index} name={item.name} img={"https://image.tmdb.org/t/p/original" + item.poster_path} />
                                         :
-                                        <CardFilm key={index} name={item.name} img={require("../images/test-foto.jpg")} />
+                                        <CardFilm style={{ width:'100%',height:'100%'}} key={index} name={item.name} img={require("../images/test-foto.jpg")} />
                                     }  
                                 </Col>
                                 

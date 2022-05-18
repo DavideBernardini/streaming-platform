@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { Navbar, Container, Form, Nav, Button,Modal } from "react-bootstrap"
-import { Globe } from "react-bootstrap-icons";
+import { CreditCardFill, Globe } from "react-bootstrap-icons";
 import { Outlet, Link } from "react-router-dom";
 
 
@@ -18,6 +18,7 @@ const Navigatore = () => {
                     <ul>
                         <li>
                             <Link to="/mainPage">Movie & Series</Link>
+                            
                         </li>
                     </ul>
                     <div id="navbarScroll">
@@ -27,6 +28,7 @@ const Navigatore = () => {
                             navbarScroll
                         >
                         </Nav>
+                        
                         <Form className="d-flex m-4">
                             <Form.Select aria-label="Default select example" style={{ minWidth: '110px' }}>
                                 <option>Italiano</option>

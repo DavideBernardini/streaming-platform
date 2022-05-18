@@ -45,7 +45,7 @@ const MoviesTvRow = (props) => {
     };
     return (
 
-        <Container >
+        <Container fluid  style={{padding:'30px'}}  >
             <div className="fs-2">{props.category}</div>
             {
                 props.moviesOrTv ?
