@@ -36,6 +36,9 @@ const MainPage = () => {
     let [comedyTv, setComedyTv] = useState(null);
     let [dramaTv, setDramaTv] = useState(null);
     let [realityTv, setRealityTv] = useState(null);
+    //add favourite
+    const [favourite, setFavourite] = useState([]);
+    let alert = false
 
     useEffect(() => {
 
@@ -50,8 +53,10 @@ const MainPage = () => {
         fetchComedyTv();
         fetchDramaTv();
         fetchRealityTv();
+        
+        setFavourite([])
 
-    }, [])
+    }, [alert])
 
     // fetch movies
     const fetchTrendsMovies = () => {
@@ -121,21 +126,54 @@ const MainPage = () => {
             })
     };
 
+     // add favourite
+     const addFavourite = (event) => {
+        console.log("ID FILM: "  + event.target.parentElement.id)
+        console.log("ADDA")
+
+        let newFavourite = null
+       
+        for (let i = 0; i < trendsMoviesOfWeek.length; i++) { 
+            if ( Number(trendsMoviesOfWeek[i].id) === Number(event.target.parentElement.id)) {
+                    newFavourite = trendsMoviesOfWeek[i]
+            }
+        }
+        // filtro per i doppioni
+        if (!favourite.includes(newFavourite)) {
+            setFavourite([...favourite, newFavourite])
+            alert = !alert
+        }
+    }
+    // remove favourite
+    const removeFavourite = (event) => {
+        console.log(event.target.parentElement)
+        console.log("RIMUOVI!!")
+        const myVect = [...favourite]
+        let index = myVect.indexOf(event.target.parentElement)
+        myVect.splice(index, 1)
+        setFavourite(myVect)
+       
+    }
+
     return (
         <div className="main-page">
             <CercaFilm />
             {/* movie rows */}
-            <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek} />
-            <MoviesTvRow category="Azione:" moviesOrTv={actionMovies} />
-            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies} />
-            <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} />
-            <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} />
+            <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek}  addFavourite={addFavourite} />
+            {
+                favourite.length > 0? <MoviesTvRow category="Preferiti" moviesOrTv={favourite} removeFavourite={removeFavourite} isFavourite={true}/> : null
+
+            }
+            
+            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies} addFavourite={addFavourite}/> 
+            <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} addFavourite={addFavourite}/>
+            <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} addFavourite={addFavourite}/>
             {/* movie rows */}
-            <MoviesTvRow category="TrendsTv:" moviesOrTv={trendsTvOfWeek} />
-            <MoviesTvRow category="Fantascienza e Fantasy:" moviesOrTv={fantasyTv} />
-            <MoviesTvRow category="Commedie:" moviesOrTv={comedyTv} />
-            <MoviesTvRow category="Drama:" moviesOrTv={dramaTv} />
-            <MoviesTvRow category="Reality:" moviesOrTv={realityTv} />
+            <MoviesTvRow category="TrendsTv:" moviesOrTv={trendsTvOfWeek} addFavourite={addFavourite}/>
+            <MoviesTvRow category="Fantascienza e Fantasy:" moviesOrTv={fantasyTv} addFavourite={addFavourite}/>
+            <MoviesTvRow category="Commedie:" moviesOrTv={comedyTv} addFavourite={addFavourite}/>
+            <MoviesTvRow category="Drama:" moviesOrTv={dramaTv} addFavourite={addFavourite}/>
+            <MoviesTvRow category="Reality:" moviesOrTv={realityTv} addFavourite={addFavourite}/>
 
         </div>
     )
