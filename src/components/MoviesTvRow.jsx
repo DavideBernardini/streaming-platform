@@ -6,6 +6,7 @@ import '../style/MoviesTvRows.scss'
 // react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CardFilm from "./CardFilm";
 
 
 const MoviesTvRow = (props) => {
@@ -54,17 +55,27 @@ const MoviesTvRow = (props) => {
                                 // movies
                                 props.moviesOrTv.map(movie => {
                                     return (
-                                        <div className="movie-tv-card" key={movie.id}>
-                                            {movie.title}
-                                        </div>
+                                        <CardFilm
+                                            key={movie.id}
+                                            id={movie.id}
+                                            title={movie.title}
+                                            img={movie.poster_path ? "https://image.tmdb.org/t/p/original" + movie.poster_path : require("../images/test-foto.jpg")}
+                                            year={movie.release_date ? movie.release_date.substring(0, 4) : ""}
+                                            type={props.category}
+                                        />
                                     )
                                 }) :
                                 // tv shows
                                 props.moviesOrTv.map(tv => {
                                     return (
-                                        <div className="movie-tv-card" key={tv.id}>
-                                            {tv.name}
-                                        </div>
+                                        <CardFilm
+                                        key={tv.id}
+                                        id={tv.id}
+                                        title={tv.title}
+                                        img={tv.poster_path ? "https://image.tmdb.org/t/p/original" + tv.poster_path : require("../images/test-foto.jpg")}
+                                        year={tv.release_date ? tv.release_date.substring(0, 4) : ""}
+                                        type={props.category}
+                                    />
                                     )
                                 })
                         }
