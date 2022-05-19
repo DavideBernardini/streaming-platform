@@ -39,8 +39,8 @@ const MainPage = () => {
     let [dramaTv, setDramaTv] = useState(null);
     let [realityTv, setRealityTv] = useState(null);
     //add favourite
-    const [favourite, setFavourite] = useState([]);
-    let alert = false
+    const [favourites, setFavourites] = useState([]);
+    let favUpdater = false
 
     useEffect(() => {
 
@@ -56,9 +56,9 @@ const MainPage = () => {
         fetchDramaTv();
         fetchRealityTv();
         
-        setFavourite([])
+        setFavourites([])
 
-    }, [alert])
+    }, [favUpdater])
 
     // fetch movies
     const fetchTrendsMovies = () => {
@@ -141,19 +141,22 @@ const MainPage = () => {
             }
         }
         // filtro per i doppioni
-        if (!favourite.includes(newFavourite)) {
-            setFavourite([...favourite, newFavourite])
-            alert = !alert
+        if (!favourites.includes(newFavourite)) {
+            setFavourites([...favourites, newFavourite])
+            favUpdater = !favUpdater
         }
     }
+
     // remove favourite
     const removeFavourite = (event) => {
         console.log(event.target.parentElement)
         console.log("RIMUOVI!!")
-        const myVect = [...favourite]
+
+        const myVect = [...favourites]
         let index = myVect.indexOf(event.target.parentElement)
         myVect.splice(index, 1)
-        setFavourite(myVect)
+        
+        setFavourites(myVect)
        
     }
 
@@ -164,7 +167,7 @@ const MainPage = () => {
             {/* movie rows */}
             <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek}  addFavourite={addFavourite} />
             {
-                favourite.length > 0? <MoviesTvRow category="Preferiti" moviesOrTv={favourite} removeFavourite={removeFavourite} isFavourite={true}/> : null
+                favourites.length > 0 && <MoviesTvRow category="Preferiti" moviesOrTv={favourites} removeFavourite={removeFavourite} isFavourite={true}/>
 
             }
             
