@@ -16,31 +16,16 @@ const CercaFilm = () => {
         });
 
     const [search, setSearch] = useState("");
-
-
-    /*
+    
     useEffect(() => {
-        axios.get(urlSearch + search)
-            .then((response) => {
-                console.log(response.data);
-                setMyData(
-                    {
-                        data: response.data
-                    }
-                );
-            })
-    }, [search, type])
-*/
-    async function fetchData() {
-        const response = await axios.get(urlSearch + search);
-        setMyData(
-            {
-                data: response.data
-            }
-        );
-    }
-
-    useEffect(() => {
+        async function fetchData() {
+            const response = await axios.get(urlSearch + search);
+            setMyData(
+                {
+                    data: response.data
+                }
+            );
+        }
         fetchData();
     }, [search, type]);
 

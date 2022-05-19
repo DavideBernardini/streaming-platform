@@ -62,11 +62,12 @@ const MoviesTvRow = (props) => {
                                             img={movie.poster_path ? "https://image.tmdb.org/t/p/original" + movie.poster_path : require("../images/test-foto.jpg")}
                                             year={movie.release_date ? movie.release_date.substring(0, 4) : ""}
                                             type={props.category}
+                                            overview={movie.overview}
                                             addFavourite={props.addFavourite}
                                             isFavourite={props.isFavourite}
                                             removeFavourite={props.removeFavourite}
-                                            overview={movie.overview}
-                                          
+                                            trailer={props.trailer}
+                                            fetchTrailer={props.fetchTrailer}
                                         />
                                     )
                                 }) :
@@ -79,11 +80,11 @@ const MoviesTvRow = (props) => {
                                         title={tv.title}
                                         img={tv.poster_path ? "https://image.tmdb.org/t/p/original" + tv.poster_path : require("../images/test-foto.jpg")}
                                         year={tv.release_date ? tv.release_date.substring(0, 4) : ""}
+                                        overview={tv.overview}
                                         type={props.category}
                                         addFavourite={props.addFavourite}
                                         isFavourite={props.isFavourite}
                                         removeFavourite={props.removeFavourite}
-                                        overview={tv.overview}
 
                                     />
                                     )
