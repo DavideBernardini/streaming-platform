@@ -251,13 +251,6 @@ const MainPage = () => {
         <div className="main-page">
             <CercaFilm />
 
-            
-            {/* movie rows */}
-            <MoviesTvRow
-                category="TrendsMovie:"
-                moviesOrTv={trendsMoviesOfWeek}
-                addFavourite={addFavourite}
-            />
             {favourites.length > 0 && (
                 <MoviesTvRow
                     category="Preferiti"
@@ -266,6 +259,13 @@ const MainPage = () => {
                     isFavourite={true}
                 />
             )}
+            {/* movie rows */}
+            <MoviesTvRow
+                category="TrendsMovie:"
+                moviesOrTv={trendsMoviesOfWeek}
+                addFavourite={addFavourite}
+            />
+            
 
             <MoviesTvRow
                 category="Commedie:"

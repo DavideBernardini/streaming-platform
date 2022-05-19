@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Container, Form, Nav, Button, Modal } from "react-bootstrap"
+import { Navbar, Container, Form, Nav, Button, Modal,Alert } from "react-bootstrap"
 import { CreditCardFill, Globe } from "react-bootstrap-icons";
 import { Outlet, Link } from "react-router-dom";
 
@@ -67,6 +67,7 @@ const Navigatore = () => {
                     </Button>
                     <Button variant="success" onClick={handleClose}>
                         <Link style={{ textDecoration: "none", color: "white" }} to="/selectUtente"> Accedi</Link>
+                        
                     </Button>
                 </Modal.Footer>
             </Modal>
