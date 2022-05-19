@@ -11,6 +11,7 @@ const MainPage = () => {
     const discoverTvUrl = "http://localhost:2000/api/tv/search/";
     const urlTrendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week";
     const urlTrendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week";
+
     // ids
     const idHorrorMovies = 27;
     const idComedyMovies = 35;
@@ -20,6 +21,12 @@ const MainPage = () => {
     const idComedyTv = 35;
     const idDramaTv = 18;
     const idRealityTv = 10764;
+
+    // search results
+    const [searchResults, setSearchResults] = useState([]);
+    const [typeSearch, setTypeSearch] = useState("movie");
+    const [search, setSearchQuery] = useState("");
+    const urlForSearch = "http://localhost:2000/api/title/search/" + typeSearch + "/";
 
     // movies
     let [trendsMoviesOfWeek, setTrendsMoviesOfWeek] = useState(null);
@@ -43,6 +50,8 @@ const MainPage = () => {
 
     useEffect(() => {
 
+        fetchSearch();
+
         fetchTrendsMovies();
         fetchComedyMovies();
         fetchHorrorMovies();
@@ -57,7 +66,14 @@ const MainPage = () => {
 
         console.log(trendsMoviesOfWeek);
 
-    }, [favUpdater]);
+    }, [favUpdater, search, typeSearch]);
+
+    const fetchSearch = async () => {
+
+        axios.get(urlForSearch + search).then((response) => {
+            setSearchResults(response.data);
+        });
+    }
 
     // fetch movies
     const fetchTrendsMovies = () => {
@@ -144,6 +160,15 @@ const MainPage = () => {
         }
         );
 
+    }
+
+    // functions for search
+    const getQuerySearch = (event) => {
+        setSearchQuery(event.target.value);
+    }
+
+    const getTypeSelect = (event) => {
+        setTypeSearch(event.target.value);
     }
 
     // add favourite
@@ -283,7 +308,11 @@ const MainPage = () => {
 
     return (
         <div className="main-page">
-            <CercaFilm />
+            <CercaFilm
+                searchResults={searchResults}
+                getTypeSelect={getTypeSelect}
+                getQuerySearch={getQuerySearch}
+            />
 
 
             {/* movie rows */}
@@ -293,6 +322,9 @@ const MainPage = () => {
                     moviesOrTv={favourites}
                     removeFavourite={removeFavourite}
                     isFavourite={true}
+                    addFavourite={addFavourite}
+                    trailer={trailer}
+                    fetchTrailer={fetchTrailerMovie}
                 />
             )}
             {/* movie rows */}
