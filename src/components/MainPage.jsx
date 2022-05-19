@@ -3,19 +3,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MoviesTvRow from "./MoviesTvRow";
 import CercaFilm from "./CercaFilm";
-import '../style/MainPage.scss'
-
-
-
+import "../style/MainPage.scss";
 
 const MainPage = () => {
-
     // base urls
     const discoverMovieUrl = "http://localhost:2000/api/movie/search/";
     const discoverTvUrl = "http://localhost:2000/api/tv/search/";
-    const trendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week"
-    const trendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week"
-
+    const urlTrendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week";
+    const urlTrendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week";
+    const videoUrl = "http://localhost:2000/api/video/movie/"
     // ids
     const idHorrorMovies = 27;
     const idComedyMovies = 35;
@@ -27,162 +23,299 @@ const MainPage = () => {
     const idRealityTv = 10764;
 
     // movies
-    let[trendsMoviesOfWeek , setTrendsMoviesOfWeek] = useState(null)
+    let [trendsMoviesOfWeek, setTrendsMoviesOfWeek] = useState(null);
     let [horrorMovies, setHorrorMovies] = useState(null);
     let [comedyMovies, setComedyMovies] = useState(null);
     let [animationMovies, setAnimationMovies] = useState(null);
     let [actionMovies, setActionMovies] = useState(null);
     // tv shows
-    let[trendsTvOfWeek , setTrendsTvOfWeek] = useState(null)
+    let [trendsTvOfWeek, setTrendsTvOfWeek] = useState(null);
     let [fantasyTv, setFantasyTv] = useState(null);
     let [comedyTv, setComedyTv] = useState(null);
     let [dramaTv, setDramaTv] = useState(null);
     let [realityTv, setRealityTv] = useState(null);
     //add favourite
     const [favourites, setFavourites] = useState([]);
-    let favUpdater = false
+    let favUpdater = false;
 
     useEffect(() => {
-
-        fetchTrendsMovies()
+        fetchTrendsMovies();
         fetchHorrorMovies();
         fetchComedyMovies();
         fetchActionMovies();
         fetchAnimationMovies();
 
-        fetchTrendsTv()
+        fetchTrendsTv();
         fetchFantasyTv();
         fetchComedyTv();
         fetchDramaTv();
         fetchRealityTv();
-        
-        setFavourites([])
 
-    }, [favUpdater])
+        setFavourites([]);
+    }, [favUpdater]);
 
     // fetch movies
     const fetchTrendsMovies = () => {
-        axios.get(trendsMoviesWeek)
-            .then((response) => {
-                setTrendsMoviesOfWeek(response.data)
-            })
+        axios.get(urlTrendsMoviesWeek).then((response) => {
+            setTrendsMoviesOfWeek(response.data);
+        });
     };
 
     const fetchHorrorMovies = () => {
-        axios.get(discoverMovieUrl + idHorrorMovies)
-            .then((response) => {
-                setHorrorMovies(response.data)
-            })
+        axios.get(discoverMovieUrl + idHorrorMovies).then((response) => {
+            setHorrorMovies(response.data);
+        });
     };
 
-    
     const fetchComedyMovies = () => {
-        axios.get(discoverMovieUrl + idComedyMovies)
-            .then((response) => {
-                setComedyMovies(response.data)
-            })
+        axios.get(discoverMovieUrl + idComedyMovies).then((response) => {
+            setComedyMovies(response.data);
+        });
     };
     const fetchActionMovies = () => {
-        axios.get(discoverMovieUrl + idActionMovies)
-            .then((response) => {
-                setActionMovies(response.data)
-            })
+        axios.get(discoverMovieUrl + idActionMovies).then((response) => {
+            setActionMovies(response.data);
+        });
     };
     const fetchAnimationMovies = () => {
-        axios.get(discoverMovieUrl + idAnimationMovies)
-            .then((response) => {
-                setAnimationMovies(response.data)
-            })
+        axios.get(discoverMovieUrl + idAnimationMovies).then((response) => {
+            setAnimationMovies(response.data);
+        });
     };
-
 
     // fetch tv shows
     const fetchTrendsTv = () => {
-        axios.get(trendsTvWeek)
-            .then((response) => {
-                setTrendsTvOfWeek(response.data)
-            })
+        axios.get(urlTrendsTvWeek).then((response) => {
+            setTrendsTvOfWeek(response.data);
+        });
     };
     const fetchFantasyTv = () => {
-        axios.get(discoverTvUrl + idFantasyTv)
-            .then((response) => {
-                setFantasyTv(response.data)
-            })
+        axios.get(discoverTvUrl + idFantasyTv).then((response) => {
+            setFantasyTv(response.data);
+        });
     };
     const fetchComedyTv = () => {
-        axios.get(discoverTvUrl + idComedyTv)
-            .then((response) => {
-                setComedyTv(response.data)
-            })
+        axios.get(discoverTvUrl + idComedyTv).then((response) => {
+            setComedyTv(response.data);
+        });
     };
     const fetchDramaTv = () => {
-        axios.get(discoverTvUrl + idDramaTv)
-            .then((response) => {
-                setDramaTv(response.data)
-            })
+        axios.get(discoverTvUrl + idDramaTv).then((response) => {
+            setDramaTv(response.data);
+        });
     };
     const fetchRealityTv = () => {
-        axios.get(discoverTvUrl + idRealityTv)
-            .then((response) => {
-                setRealityTv(response.data)
-            })
+        axios.get(discoverTvUrl + idRealityTv).then((response) => {
+            setRealityTv(response.data);
+        });
     };
 
-     // add favourite
-     const addFavourite = (event) => {
-        console.log("ID FILM: "  + event.target.parentElement.id)
-        console.log("ADDA")
+    // add favourite
+    const addFavourite = (event) => {
+        console.log(event.target.parentElement.id);
+        console.log("ADDA");
 
-        let newFavourite = null
-       
-        for (let i = 0; i < trendsMoviesOfWeek.length; i++) { 
-            if ( Number(trendsMoviesOfWeek[i].id) === Number(event.target.parentElement.id)) {
-                    newFavourite = trendsMoviesOfWeek[i]
+        let newFavourite = null;
+
+        if (
+            trendsMoviesOfWeek.find((obj) => obj.id == event.target.parentElement.id)
+        ) {
+            for (let i = 0; i < trendsMoviesOfWeek.length; i++) {
+                if (
+                    Number(trendsMoviesOfWeek[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = trendsMoviesOfWeek[i];
+                }
+            }
+           
+        }
+        else if(horrorMovies.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < horrorMovies.length; i++) {
+                if (
+                    Number(horrorMovies[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = horrorMovies[i];
+                }
             }
         }
-        // filtro per i doppioni
-        if (!favourites.includes(newFavourite)) {
-            setFavourites([...favourites, newFavourite])
-            favUpdater = !favUpdater
+        else if(comedyMovies.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < comedyMovies.length; i++) {
+                if (
+                    Number(comedyMovies[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = comedyMovies[i];
+                }
+            }
         }
-    }
-
+        else if(animationMovies.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < animationMovies.length; i++) {
+                if (
+                    Number(animationMovies[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = animationMovies[i];
+                }
+            }
+        }
+        else if(actionMovies.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < actionMovies.length; i++) {
+                if (
+                    Number(actionMovies[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = actionMovies[i];
+                }
+            }
+        }
+        else if(trendsTvOfWeek.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < trendsTvOfWeek.length; i++) {
+                if (
+                    Number(trendsTvOfWeek[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = trendsTvOfWeek[i];
+                }
+            }
+        }
+        else if(fantasyTv.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < fantasyTv.length; i++) {
+                if (
+                    Number(fantasyTv[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = fantasyTv[i];
+                }
+            }
+        }
+        else if(comedyTv.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < comedyTv.length; i++) {
+                if (
+                    Number(comedyTv[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = comedyTv[i];
+                }
+            }
+        }
+        else if(dramaTv.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < dramaTv.length; i++) {
+                if (
+                    Number(dramaTv[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = dramaTv[i];
+                }
+            }
+        }
+        else if(realityTv.find((obj) => obj.id == event.target.parentElement.id)
+        ){
+            for (let i = 0; i < realityTv.length; i++) {
+                if (
+                    Number(realityTv[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = realityTv[i];
+                }
+            }
+        }
+         // filtro per i doppioni
+         if (!favourites.includes(newFavourite)) {
+            setFavourites([...favourites, newFavourite]);
+            favUpdater = !favUpdater;
+        }
+    };
     // remove favourite
     const removeFavourite = (event) => {
-        console.log(event.target.parentElement)
-        console.log("RIMUOVI!!")
+        console.log(event.target.parentElement);
+        console.log("RIMUOVI!!");
 
-        const myVect = [...favourites]
-        let index = myVect.indexOf(event.target.parentElement)
-        myVect.splice(index, 1)
-        
-        setFavourites(myVect)
-       
-    }
+        const myVect = [...favourites];
+        let index = myVect.indexOf(event.target.parentElement);
+        myVect.splice(index, 1);
+
+        setFavourites(myVect);
+    };
 
     return (
         <div className="main-page">
             <CercaFilm />
-       
-            {/* movie rows */}
-            <MoviesTvRow category="TrendsMovie:" moviesOrTv={trendsMoviesOfWeek}  addFavourite={addFavourite} />
-            {
-                favourites.length > 0 && <MoviesTvRow category="Preferiti" moviesOrTv={favourites} removeFavourite={removeFavourite} isFavourite={true}/>
 
-            }
             
-            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies}   addFavourite={addFavourite}/> 
-            <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} addFavourite={addFavourite}/>
-            <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} addFavourite={addFavourite}/>
             {/* movie rows */}
-            <MoviesTvRow category="TrendsTv:" moviesOrTv={trendsTvOfWeek} addFavourite={addFavourite}/>
-            <MoviesTvRow category="Fantascienza e Fantasy:" moviesOrTv={fantasyTv} addFavourite={addFavourite}/>
-            <MoviesTvRow category="Commedie:" moviesOrTv={comedyTv} addFavourite={addFavourite}/>
-            <MoviesTvRow category="Drama:" moviesOrTv={dramaTv} addFavourite={addFavourite}/>
-            <MoviesTvRow category="Reality:" moviesOrTv={realityTv} addFavourite={addFavourite}/>
+            <MoviesTvRow
+                category="TrendsMovie:"
+                moviesOrTv={trendsMoviesOfWeek}
+                addFavourite={addFavourite}
+            />
+            {favourites.length > 0 && (
+                <MoviesTvRow
+                    category="Preferiti"
+                    moviesOrTv={favourites}
+                    removeFavourite={removeFavourite}
+                    isFavourite={true}
+                />
+            )}
 
+            <MoviesTvRow
+                category="Commedie:"
+                moviesOrTv={comedyMovies}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Horror:"
+                moviesOrTv={horrorMovies}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Animazione:"
+                moviesOrTv={animationMovies}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Azione:"
+                moviesOrTv={actionMovies}
+                addFavourite={addFavourite}
+            />
+
+            {/* movie rows */}
+            <MoviesTvRow
+                category="TrendsTv:"
+                moviesOrTv={trendsTvOfWeek}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Fantascienza e Fantasy:"
+                moviesOrTv={fantasyTv}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Commedie:"
+                moviesOrTv={comedyTv}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Drama:"
+                moviesOrTv={dramaTv}
+                addFavourite={addFavourite}
+            />
+            <MoviesTvRow
+                category="Reality:"
+                moviesOrTv={realityTv}
+                addFavourite={addFavourite}
+            />
         </div>
-    )
-}
+    );
+};
 
 export default MainPage;
