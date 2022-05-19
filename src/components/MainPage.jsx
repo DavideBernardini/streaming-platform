@@ -121,20 +121,15 @@ const MainPage = () => {
         console.log(event.target.parentElement.id);
 
         const APY_KEY = "c0af7194607876d6036970e4504abc6d";
-        let urlTrailerYT = 'https://www.youtube.com/watch?v=';
+        let urlTrailerYT = "https://www.youtube.com/embed/";
+        let urlTrailer = 'https://api.themoviedb.org/3/movie/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
 
-        axios.get("https://api.themoviedb.org/3/movie/" + event.target.parentElement.id + "/videos", {
-            params: {
-                api_key: APY_KEY,
-                language: "en-US",
-            },
-        }).then(response => {
-            urlTrailerYT += response.data.results[0].key;
-        })
+        axios.get(urlTrailer).then((response) => {
+            console.log(response.data.results[0].key);
+            setTrailer(urlTrailerYT + response.data.results[0].key);
+        }
+        );
 
-        setTrailer(urlTrailerYT);
-        
-        
     }
 
     // add favourite
