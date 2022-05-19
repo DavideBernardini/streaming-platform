@@ -11,7 +11,6 @@ const MainPage = () => {
     const discoverTvUrl = "http://localhost:2000/api/tv/search/";
     const urlTrendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week";
     const urlTrendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week";
-    const videoUrl = "http://localhost:2000/api/video/movie/"
     // ids
     const idHorrorMovies = 27;
     const idComedyMovies = 35;
@@ -34,14 +33,19 @@ const MainPage = () => {
     let [comedyTv, setComedyTv] = useState(null);
     let [dramaTv, setDramaTv] = useState(null);
     let [realityTv, setRealityTv] = useState(null);
+
     //add favourite
     const [favourites, setFavourites] = useState([]);
     let favUpdater = false;
 
+    // trailer
+    let [trailer, setTrailer] = useState('')
+
     useEffect(() => {
+
         fetchTrendsMovies();
-        fetchHorrorMovies();
         fetchComedyMovies();
+        fetchHorrorMovies();
         fetchActionMovies();
         fetchAnimationMovies();
 
@@ -51,11 +55,13 @@ const MainPage = () => {
         fetchDramaTv();
         fetchRealityTv();
 
-        setFavourites([]);
+        console.log(trendsMoviesOfWeek);
+
     }, [favUpdater]);
 
     // fetch movies
     const fetchTrendsMovies = () => {
+
         axios.get(urlTrendsMoviesWeek).then((response) => {
             setTrendsMoviesOfWeek(response.data);
         });
@@ -110,6 +116,27 @@ const MainPage = () => {
         });
     };
 
+    // get trailer TODO: usare express
+    const fetchTrailer = (event) => {
+        console.log(event.target.parentElement.id);
+
+        const APY_KEY = "c0af7194607876d6036970e4504abc6d";
+        let urlTrailerYT = 'https://www.youtube.com/watch?v=';
+
+        axios.get("https://api.themoviedb.org/3/movie/" + event.target.parentElement.id + "/videos", {
+            params: {
+                api_key: APY_KEY,
+                language: "en-US",
+            },
+        }).then(response => {
+            urlTrailerYT += response.data.results[0].key;
+        })
+
+        setTrailer(urlTrailerYT);
+        
+        
+    }
+
     // add favourite
     const addFavourite = (event) => {
         console.log(event.target.parentElement.id);
@@ -118,7 +145,7 @@ const MainPage = () => {
         let newFavourite = null;
 
         if (
-            trendsMoviesOfWeek.find((obj) => obj.id == event.target.parentElement.id)
+            trendsMoviesOfWeek.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ) {
             for (let i = 0; i < trendsMoviesOfWeek.length; i++) {
                 if (
@@ -128,10 +155,10 @@ const MainPage = () => {
                     newFavourite = trendsMoviesOfWeek[i];
                 }
             }
-           
+
         }
-        else if(horrorMovies.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (horrorMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < horrorMovies.length; i++) {
                 if (
                     Number(horrorMovies[i].id) ===
@@ -141,8 +168,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(comedyMovies.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (comedyMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < comedyMovies.length; i++) {
                 if (
                     Number(comedyMovies[i].id) ===
@@ -152,8 +179,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(animationMovies.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (animationMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < animationMovies.length; i++) {
                 if (
                     Number(animationMovies[i].id) ===
@@ -163,8 +190,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(actionMovies.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (actionMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < actionMovies.length; i++) {
                 if (
                     Number(actionMovies[i].id) ===
@@ -174,8 +201,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(trendsTvOfWeek.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (trendsTvOfWeek.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < trendsTvOfWeek.length; i++) {
                 if (
                     Number(trendsTvOfWeek[i].id) ===
@@ -185,8 +212,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(fantasyTv.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (fantasyTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < fantasyTv.length; i++) {
                 if (
                     Number(fantasyTv[i].id) ===
@@ -196,8 +223,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(comedyTv.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (comedyTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < comedyTv.length; i++) {
                 if (
                     Number(comedyTv[i].id) ===
@@ -207,8 +234,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(dramaTv.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (dramaTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < dramaTv.length; i++) {
                 if (
                     Number(dramaTv[i].id) ===
@@ -218,8 +245,8 @@ const MainPage = () => {
                 }
             }
         }
-        else if(realityTv.find((obj) => obj.id == event.target.parentElement.id)
-        ){
+        else if (realityTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
             for (let i = 0; i < realityTv.length; i++) {
                 if (
                     Number(realityTv[i].id) ===
@@ -229,16 +256,14 @@ const MainPage = () => {
                 }
             }
         }
-         // filtro per i doppioni
-         if (!favourites.includes(newFavourite)) {
+        // filtro per i doppioni
+        if (!favourites.includes(newFavourite)) {
             setFavourites([...favourites, newFavourite]);
             favUpdater = !favUpdater;
         }
     };
     // remove favourite
     const removeFavourite = (event) => {
-        console.log(event.target.parentElement);
-        console.log("RIMUOVI!!");
 
         const myVect = [...favourites];
         let index = myVect.indexOf(event.target.parentElement);
@@ -251,6 +276,15 @@ const MainPage = () => {
         <div className="main-page">
             <CercaFilm />
 
+
+            {/* movie rows */}
+            <MoviesTvRow
+                category="TrendsMovie:"
+                moviesOrTv={trendsMoviesOfWeek}
+                addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailer}
+            />
             {favourites.length > 0 && (
                 <MoviesTvRow
                     category="Preferiti"

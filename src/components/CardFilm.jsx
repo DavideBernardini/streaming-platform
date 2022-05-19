@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Card, Button, Modal, Form,Alert } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Card, Button, Modal, Form } from 'react-bootstrap'
 import '../style/CardFilm.scss'
-import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBIcon } from 'mdb-react-ui-kit';
 
 // http://localhost:2000/api/title/search/:type/:query
 // localhost:2000/api/title/search/movie/spiderman
@@ -15,11 +15,11 @@ const CardFilm = (props) => {
 
 
 
+   
+
     return (
         <>
-
-        
-            <Card style={{ width: '20rem', height: '30rem' }} id={props.id}>
+            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer}>
                 <Card.Img onClick={handleShow} style={{ width: '100%', height: '100%' }} className="hoverCard" variant="top" src={props.img} alt="immagine" />
 
 
@@ -44,7 +44,7 @@ const CardFilm = (props) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/1Sv8G7Bu2vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                 <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
                     <Form>
                         <h3 className='fw-bold'>Descrizione</h3>
