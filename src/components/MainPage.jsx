@@ -118,7 +118,7 @@ const MainPage = () => {
         let newFavourite = null;
 
         if (
-            trendsMoviesOfWeek.find((obj) => obj.id == event.target.parentElement.id)
+            trendsMoviesOfWeek.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ) {
             for (let i = 0; i < trendsMoviesOfWeek.length; i++) {
                 if (
@@ -130,7 +130,7 @@ const MainPage = () => {
             }
            
         }
-        else if(horrorMovies.find((obj) => obj.id == event.target.parentElement.id)
+        else if(horrorMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < horrorMovies.length; i++) {
                 if (
@@ -141,7 +141,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(comedyMovies.find((obj) => obj.id == event.target.parentElement.id)
+        else if(comedyMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < comedyMovies.length; i++) {
                 if (
@@ -152,7 +152,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(animationMovies.find((obj) => obj.id == event.target.parentElement.id)
+        else if(animationMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < animationMovies.length; i++) {
                 if (
@@ -163,7 +163,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(actionMovies.find((obj) => obj.id == event.target.parentElement.id)
+        else if(actionMovies.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < actionMovies.length; i++) {
                 if (
@@ -174,7 +174,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(trendsTvOfWeek.find((obj) => obj.id == event.target.parentElement.id)
+        else if(trendsTvOfWeek.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < trendsTvOfWeek.length; i++) {
                 if (
@@ -185,7 +185,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(fantasyTv.find((obj) => obj.id == event.target.parentElement.id)
+        else if(fantasyTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < fantasyTv.length; i++) {
                 if (
@@ -196,7 +196,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(comedyTv.find((obj) => obj.id == event.target.parentElement.id)
+        else if(comedyTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < comedyTv.length; i++) {
                 if (
@@ -207,7 +207,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(dramaTv.find((obj) => obj.id == event.target.parentElement.id)
+        else if(dramaTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < dramaTv.length; i++) {
                 if (
@@ -218,7 +218,7 @@ const MainPage = () => {
                 }
             }
         }
-        else if(realityTv.find((obj) => obj.id == event.target.parentElement.id)
+        else if(realityTv.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
         ){
             for (let i = 0; i < realityTv.length; i++) {
                 if (
