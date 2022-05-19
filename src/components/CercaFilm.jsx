@@ -2,38 +2,30 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CardFilm from "./CardFilm";
-// http://localhost:2000/api/title/search/:type/:query
 
 const CercaFilm = () => {
-    const [type, setType] = useState("movie");
-    const urlSearch = "http://localhost:2000/api/title/search/" + type + "/";
-    const [myData, setMyData] = useState(
-        {
-            data: []
-        });
-
-    const [search, setSearch] = useState("");
+    const [typeSearch, setTypeSearch] = useState("movie");
+    const urlForSearch = "http://localhost:2000/api/title/search/" + typeSearch + "/";
+    const [searchResults, setSearchResults] = useState([]);
+    const [search, setSearchQuery] = useState("");
     
+
     useEffect(() => {
-        async function fetchData() {
-            const response = await axios.get(urlSearch + search);
-            setMyData(
-                {
-                    data: response.data
-                }
-            );
+        const fetchSearch = async () => {
+            const response = await axios.get(urlForSearch + search);
+            setSearchResults(response.data);
         }
-        fetchData();
-    }, [search, type]);
+        fetchSearch();
+    }, [search, typeSearch]);
 
 
 
     const handleChange = (event) => {
-        setSearch(event.target.value);
+        setSearchQuery(event.target.value);
     }
 
     const handleChangeType = (event) => {
-        setType(event.target.value);
+        setTypeSearch(event.target.value);
     }
 
     return (
@@ -51,7 +43,7 @@ const CercaFilm = () => {
                     {
 
                         //ricerca film
-                        myData.data.map((item, index) => (
+                        searchResults.map((item, index) => (
 
                             item.title ?
 
