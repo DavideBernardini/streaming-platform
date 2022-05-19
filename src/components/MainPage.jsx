@@ -117,7 +117,7 @@ const MainPage = () => {
     };
 
     // get trailer TODO: usare express
-    const fetchTrailer = (event) => {
+    const fetchTrailerMovie = (event) => {
         console.log(event.target.parentElement.id);
 
         const APY_KEY = "c0af7194607876d6036970e4504abc6d";
@@ -135,6 +135,20 @@ const MainPage = () => {
         setTrailer(urlTrailerYT);
         
         
+    }
+    const fetchTrailerTv = (event) => {
+        console.log(event.target.parentElement.id);
+
+        const APY_KEY = "c0af7194607876d6036970e4504abc6d";
+        let urlTrailerYT = "https://www.youtube.com/embed/";
+        let urlTrailer = 'https://api.themoviedb.org/3/tv/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
+
+        axios.get(urlTrailer).then((response) => {
+            console.log(response.data.results[0].key);
+            setTrailer(urlTrailerYT + response.data.results[0].key);
+        }
+        );
+
     }
 
     // add favourite
@@ -278,13 +292,6 @@ const MainPage = () => {
 
 
             {/* movie rows */}
-            <MoviesTvRow
-                category="TrendsMovie:"
-                moviesOrTv={trendsMoviesOfWeek}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailer}
-            />
             {favourites.length > 0 && (
                 <MoviesTvRow
                     category="Preferiti"
@@ -298,55 +305,73 @@ const MainPage = () => {
                 category="TrendsMovie:"
                 moviesOrTv={trendsMoviesOfWeek}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
-            
-
             <MoviesTvRow
                 category="Commedie:"
                 moviesOrTv={comedyMovies}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
             <MoviesTvRow
                 category="Horror:"
                 moviesOrTv={horrorMovies}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
             <MoviesTvRow
                 category="Animazione:"
                 moviesOrTv={animationMovies}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
             <MoviesTvRow
                 category="Azione:"
                 moviesOrTv={actionMovies}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
 
-            {/* movie rows */}
+            {/* tv rows */}
             <MoviesTvRow
                 category="TrendsTv:"
                 moviesOrTv={trendsTvOfWeek}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerTv}
             />
             <MoviesTvRow
                 category="Fantascienza e Fantasy:"
                 moviesOrTv={fantasyTv}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerTv}
             />
             <MoviesTvRow
                 category="Commedie:"
                 moviesOrTv={comedyTv}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerTv}
             />
             <MoviesTvRow
                 category="Drama:"
                 moviesOrTv={dramaTv}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerTv}
             />
             <MoviesTvRow
                 category="Reality:"
                 moviesOrTv={realityTv}
                 addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerTv}
             />
         </div>
     );
