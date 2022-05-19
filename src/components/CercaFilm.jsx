@@ -5,9 +5,6 @@ import CardFilm from "./CardFilm";
 // http://localhost:2000/api/title/search/:type/:query
 
 const CercaFilm = () => {
-    //const movie = "movie"
-    //const tv = "tv"
-    //setto di default movie
     const [type, setType] = useState("movie");
     const urlSearch = "http://localhost:2000/api/title/search/" + type + "/";
     const [myData, setMyData] = useState(

@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import { Card, Button, Modal, Form } from 'react-bootstrap'
 import '../style/CardFilm.scss'
 import { MDBIcon } from 'mdb-react-ui-kit';
-
+//
 // http://localhost:2000/api/title/search/:type/:query
 // localhost:2000/api/title/search/movie/spiderman
 const CardFilm = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-
-
-
-
-
-   
 
     return (
         <>
@@ -66,7 +59,6 @@ const CardFilm = (props) => {
         </>
     )
 }
-
 
 CardFilm.defaultProps = { isFavourite: false }
 
