@@ -65,6 +65,7 @@ const MoviesTvRow = (props) => {
                                             addFavourite={props.addFavourite}
                                             isFavourite={props.isFavourite}
                                             removeFavourite={props.removeFavourite}
+                                            overview={movie.overview}
                                           
                                         />
                                     )
@@ -82,6 +83,8 @@ const MoviesTvRow = (props) => {
                                         addFavourite={props.addFavourite}
                                         isFavourite={props.isFavourite}
                                         removeFavourite={props.removeFavourite}
+                                        overview={tv.overview}
+
                                     />
                                     )
                                 })

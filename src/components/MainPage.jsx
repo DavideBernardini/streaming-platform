@@ -171,7 +171,7 @@ const MainPage = () => {
 
             }
             
-            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies} addFavourite={addFavourite}/> 
+            <MoviesTvRow category="Commedie:" moviesOrTv={comedyMovies}   addFavourite={addFavourite}/> 
             <MoviesTvRow category="Horror:" moviesOrTv={horrorMovies} addFavourite={addFavourite}/>
             <MoviesTvRow category="Animazione:" moviesOrTv={animationMovies} addFavourite={addFavourite}/>
             {/* movie rows */}
