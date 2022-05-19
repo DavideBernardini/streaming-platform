@@ -66,6 +66,7 @@ const Navigatore = () => {
                     </Button>
                     <Button variant="success" onClick={handleClose}>
                         <Link style={{ textDecoration: "none", color: "white" }} to="/selectUtente"> Accedi</Link>
+                        
                     </Button>
                 </Modal.Footer>
             </Modal>

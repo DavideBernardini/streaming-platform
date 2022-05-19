@@ -10,12 +10,20 @@ const CardFilm = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
+
+
+
+
+   
+
     return (
         <>
             <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer}>
                 <Card.Img onClick={handleShow} style={{ width: '100%', height: '100%' }} className="hoverCard" variant="top" src={props.img} alt="immagine" />
 
-                {
+
+                {!show &&
                     props.isFavourite ?
 
                         <Button className="btn btn-danger" onClick={props.removeFavourite}>
@@ -23,9 +31,11 @@ const CardFilm = (props) => {
                         </Button>
                         :
                         <Button className="btn btn-light" onClick={props.addFavourite}>
-                            Aggiungi ai Preferiti <MDBIcon  fas icon='heart' className="text-danger" />
+                            Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
                         </Button>
                 }
+
+               
 
             </Card>
             <Modal size='lg' show={show} onHide={handleClose}>
@@ -34,7 +44,7 @@ const CardFilm = (props) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                 <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
                     <Form>
                         <h3 className='fw-bold'>Descrizione</h3>
