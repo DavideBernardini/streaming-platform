@@ -10,24 +10,27 @@ const SelectUtente = () => {
             <div className="contenitoreGrande text-center" >
                 <div className="profili">
                     <h1>Chi vuole Guardare GreenStream?</h1>
-                    <ul className="menu ">
-                        <li >
-                            <Link to="/mainPage"><img  src={require("../images/avatar1.png")}></img></Link>
-                        </li>
-                        <li>
-                        <Link to="/mainPage"><img  src={require("../images/avatar2.png")}></img></Link>
-                        </li>
-                        <li>
-                        <Link to="/mainPage"><img  src={require("../images/avatar3.png")}></img></Link>
-                        </li>
-                        <li>
-                        <Link to="/mainPage"><img  src={require("../images/avatar4.png")}></img></Link>
-                        </li>
-                        
-                    </ul>
-                </div>
-
+                        <ul className='profileList'>
+                            <li >
+                                <Link to="/mainPage"><img src={require("../images/avatar1.png")}></img></Link>
+                                <div className='fs-4 fw-bold'>Alessandro</div>
+                            </li>
+                            <li>
+                            <Link to="/mainPage"><img src={require("../images/avatar2.png")}></img></Link>
+                            <div className='fs-4 fw-bold'>Davide</div>
+                            </li>
+                            <li>
+                            <Link to="/mainPage"><img src={require("../images/avatar3.png")}></img></Link>
+                            <div className='fs-4 fw-bold'>Valerio</div>
+                            </li>
+                            <li>
+                            <Link to="/mainPage"><img src={require("../images/avatar4.png")}></img></Link>
+                            <div className='fs-4 fw-bold'>Loris</div>
+                            </li>
+                        </ul>
             </div>
+
+        </div>
 
 
         </>
