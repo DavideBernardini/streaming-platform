@@ -14,7 +14,7 @@ const Banner1 = () => {
                             Goditi GreenStream sulla tua TV.
                         </h2>
                         <p className='testiTitolo'>
-                            Guarda GreenStram su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi.
+                            Guarda GreenStream su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi.
                         </p>
                     </div>
 
