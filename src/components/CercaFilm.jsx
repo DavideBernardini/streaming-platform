@@ -1,10 +1,11 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CardFilm from "./CardFilm";
 
+
 const CercaFilm = (props) => {
     return (
         <div className="text-center">
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column" style={{zIndex: 10000}}>
                 <Form.Select className="mb-3" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} onChange={props.getTypeSelect}>
                     <option value="movie">Film</option>
                     <option value="tv">Serie Tv</option>
