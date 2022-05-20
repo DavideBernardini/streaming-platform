@@ -7,7 +7,7 @@ const Banner2 = () => {
 
     return (
         <Container>
-            <Row  xs={1} md={1} className="banner-rt d-flex align-items-md-center">
+            <Row  xs={1} md={1} lg={2} className="banner-rt d-flex align-items-md-center">
 
                 <Col xs={{order: 2}} lg={{order: 1}} className="banner-rt_image">
                     <img className='mobile' src="https://mr.comingsoon.it/imgdb/locandine/big/61235.jpg"alt="mobile" />
