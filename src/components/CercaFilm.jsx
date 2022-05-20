@@ -47,7 +47,7 @@ const CercaFilm = () => {
 
 
             <Container fluid style={{ padding: '30px' }}>
-                <Row xs={5}>
+                <Row xs={2}>
                     {
 
                         //ricerca film

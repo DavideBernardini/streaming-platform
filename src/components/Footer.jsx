@@ -69,25 +69,25 @@ export default function Footer() {
             </div>
 
             <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
+              <h6 className='text-uppercase fw-bold mb-4'>Staff</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Pricing
+                  Menconi Alessandro
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Settings
+                  Davide Bernardini
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Orders
+                  Valerio Procaccianti
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Help
+                  Loris Del Santo
                 </a>
               </p>
             </div>
