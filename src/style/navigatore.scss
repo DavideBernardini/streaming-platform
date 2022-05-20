@@ -1,12 +1,17 @@
 .navbar {
   z-index: 100;
+  transition: all 0.5s ease;
 }
-.landing-page {
-  margin-top: 85.6px;
+.navbar.scrolled {   
+  position: fixed;   
+  top: 0px;   
+  background-color: black;   
+  transition: all 0.5s ease; 
 }
+
 .hero {
     width: auto;
-    height: 770px;
+    height: 900px;
     background-image: url("../images/image00001(1).jpeg");
     background-size: cover;
     position: relative;
@@ -14,6 +19,7 @@
 .hero > * {
   z-index: 10;
 }
+
 .titolo{
   text-shadow: 1px 1px white;
 

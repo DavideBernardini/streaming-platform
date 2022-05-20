@@ -4,12 +4,15 @@ import CardFilm from "./CardFilm";
 const CercaFilm = (props) => {
     return (
         <div className="text-center">
-            <Form.Select className="mb-3" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} onChange={props.getTypeSelect}>
-                <option value="movie">Film</option>
-                <option value="tv">Serie Tv</option>
-            </Form.Select>
+            <div className="d-flex flex-column">
+                <Form.Select className="mb-3" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} onChange={props.getTypeSelect}>
+                    <option value="movie">Film</option>
+                    <option value="tv">Serie Tv</option>
+                </Form.Select>
 
-            <input type="text" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} placeholder="Search" onChange={props.getQuerySearch} />
+                <input type="text" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} placeholder="Search" onChange={props.getQuerySearch} />
+            </div>
+
 
 
             <Container fluid style={{ padding: '30px' }}>
@@ -24,23 +27,23 @@ const CercaFilm = (props) => {
                                     {item.title}
                                     {
                                         item.poster_path ?
-                                            <CardFilm style={{ width: '100%', height: '100%' }} 
-                                            key={index} name={item.title} 
-                                            img={"https://image.tmdb.org/t/p/original" + item.poster_path} 
-                                            fetchTrailer={props.fetchTrailer} 
-                                            trailer={props.trailer} 
-                                            overview={props.overview} 
-                                            addFavourite={props.addFavourite} 
+                                            <CardFilm style={{ width: '100%', height: '100%' }}
+                                                key={index} name={item.title}
+                                                img={"https://image.tmdb.org/t/p/original" + item.poster_path}
+                                                fetchTrailer={props.fetchTrailer}
+                                                trailer={props.trailer}
+                                                overview={props.overview}
+                                                addFavourite={props.addFavourite}
                                             />
                                             :
-                                            <CardFilm style={{ width: '100%', height: '100%' }} 
-                                            key={index} 
-                                            name={item.title} 
-                                            img={require("../images/test-foto.jpg")} 
-                                            fetchTrailer={props.fetchTrailer} 
-                                            trailer={props.trailer} 
-                                            overview={props.overview} 
-                                            addFavourite={props.addFavourite} />
+                                            <CardFilm style={{ width: '100%', height: '100%' }}
+                                                key={index}
+                                                name={item.title}
+                                                img={require("../images/test-foto.jpg")}
+                                                fetchTrailer={props.fetchTrailer}
+                                                trailer={props.trailer}
+                                                overview={props.overview}
+                                                addFavourite={props.addFavourite} />
                                     }
                                 </Col>
                                 :
@@ -48,24 +51,24 @@ const CercaFilm = (props) => {
                                     {item.name}
                                     {
                                         item.poster_path ?
-                                            <CardFilm style={{ width: '100%', height: '100%' }} 
-                                            key={index} 
-                                            name={item.name} 
-                                            img={"https://image.tmdb.org/t/p/original" + item.poster_path} 
-                                            fetchTrailer={props.fetchTrailer} 
-                                            trailer={props.trailer} 
-                                            overview={props.overview} 
-                                            addFavourite={props.addFavourite} 
+                                            <CardFilm style={{ width: '100%', height: '100%' }}
+                                                key={index}
+                                                name={item.name}
+                                                img={"https://image.tmdb.org/t/p/original" + item.poster_path}
+                                                fetchTrailer={props.fetchTrailer}
+                                                trailer={props.trailer}
+                                                overview={props.overview}
+                                                addFavourite={props.addFavourite}
                                             />
                                             :
-                                            <CardFilm style={{ width: '100%', height: '100%' }} 
-                                            key={index} 
-                                            name={item.name} 
-                                            img={require("../images/test-foto.jpg")} 
-                                            fetchTrailer={props.fetchTrailer} 
-                                            trailer={props.trailer} 
-                                            overview={props.overview} 
-                                            addFavourite={props.addFavourite} 
+                                            <CardFilm style={{ width: '100%', height: '100%' }}
+                                                key={index}
+                                                name={item.name}
+                                                img={require("../images/test-foto.jpg")}
+                                                fetchTrailer={props.fetchTrailer}
+                                                trailer={props.trailer}
+                                                overview={props.overview}
+                                                addFavourite={props.addFavourite}
                                             />
                                     }
                                 </Col>

@@ -12,10 +12,19 @@ const Navigatore = () => {
     const [show2, setShow2] = useState(false);
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
+    // scroll nav
+    let [isScrolled, setIsScrolled] = useState(false);
+
+    window.onscroll = () => {
+        setIsScrolled(window.pageYOffset === 0 ? false : true);
+        return () => (window.onscroll = null);
+    };
 
     return (
         <>
-            <Navbar bg="none" expand="lg" className="navbar flex-nowrap top-0 position-fixed w-100 bg-black py-1">
+        {
+            isScrolled ?
+            <Navbar bg="none" expand="lg" className="navbar scrolled flex-nowrap top-0 position-fixed w-100 py-1">
                 <Container fluid>
                     <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color: "#198754" }}>GreenStream</h1></Navbar.Brand>
                     <div id="navbarScroll">
@@ -32,7 +41,29 @@ const Navigatore = () => {
                         </Form>
                     </div>
                 </Container>
-            </Navbar>
+            </Navbar> :
+
+            <Navbar bg="none" expand="lg" className="navbar flex-nowrap top-0 position-fixed w-100 py-1">
+            <Container fluid>
+                <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color: "#198754" }}>GreenStream</h1></Navbar.Brand>
+                <div id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                    </Nav>
+
+                    <Form className="d-flex m-4">
+                        
+                        <Button id="btn-access" className="ms-2 mx-md-4 px-3" variant="success" onClick={handleShow}>Inizia</Button>
+                    </Form>
+                </div>
+            </Container>
+        </Navbar>
+        }
+            
+
             <Outlet />
 
 

@@ -139,7 +139,7 @@ const MainPage = () => {
         let urlTrailer = 'https://api.themoviedb.org/3/movie/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
 
         axios.get(urlTrailer).then((response) => {
-            
+
             response.data.results.forEach(result => {
                 if (result.site === "YouTube")
                     setTrailer(urlTrailerYT + result.key);
