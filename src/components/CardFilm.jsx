@@ -19,16 +19,16 @@ const CardFilm = (props) => {
                 {!show &&
                     props.isFavourite ?
 
-                        <Button className="btn btn-danger" onClick={props.removeFavourite}>
-                            Rimuovi dai Preferiti <MDBIcon fas icon="ban" />
-                        </Button>
-                        :
-                        <Button className="btn btn-light" onClick={props.addFavourite}>
-                            Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
-                        </Button>
+                    <Button className="btn btn-danger" onClick={props.removeFavourite}>
+                        Rimuovi dai Preferiti <MDBIcon fas icon="ban" />
+                    </Button>
+                    :
+                    <Button className="btn btn-light" onClick={props.addFavourite}>
+                        Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
+                    </Button>
                 }
 
-               
+
 
             </Card>
             <Modal size='lg' show={show} onHide={handleClose}>
@@ -37,11 +37,17 @@ const CardFilm = (props) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                 <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
                     <Form>
-                        <h3 className='fw-bold'>Descrizione</h3>
-                        <p>{props.overview}</p>
+                        {
+                            props.overview &&
+                            <>
+                                <h3 className='fw-bold'>Descrizione</h3>
+                                <p>{props.overview}</p>
+                            </>
+                        }
+
                     </Form>
                     <br></br>
                     <Button className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>

@@ -77,7 +77,7 @@ const MoviesTvRow = (props) => {
                                         <CardFilm
                                         key={tv.id}
                                         id={tv.id}
-                                        title={tv.title}
+                                        title={tv.name}
                                         img={tv.poster_path ? "https://image.tmdb.org/t/p/original" + tv.poster_path : require("../images/test-foto.jpg")}
                                         year={tv.release_date ? tv.release_date.substring(0, 4) : ""}
                                         overview={tv.overview}
@@ -85,7 +85,8 @@ const MoviesTvRow = (props) => {
                                         addFavourite={props.addFavourite}
                                         isFavourite={props.isFavourite}
                                         removeFavourite={props.removeFavourite}
-
+                                        trailer={props.trailer}
+                                        fetchTrailer={props.fetchTrailer}
                                     />
                                     )
                                 })
