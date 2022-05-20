@@ -87,7 +87,7 @@ export default function Footer() {
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Loris Del Santo
+                  Loris Dal Santo
                 </a>
               </p>
             </div>
