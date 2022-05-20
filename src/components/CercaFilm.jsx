@@ -13,14 +13,14 @@ const CercaFilm = (props) => {
 
 
             <Container fluid style={{ padding: '30px' }}>
-                <Row xs={2}>
+                <Row xs={1} sm={2} md={3} lg={4} xxl={5}>
                     {
                         //ricerca film
                         props.searchResults.map((item, index) => (
 
                             item.title ?
 
-                                <Col key={index}>
+                                <Col className="d-flex flex-column align-items-center mb-3" key={index}>
                                     {item.title}
                                     {
                                         item.poster_path ?
@@ -44,7 +44,7 @@ const CercaFilm = (props) => {
                                     }
                                 </Col>
                                 :
-                                <Col key={index}>
+                                <Col className="d-flex flex-column align-items-center mb-3" key={index}>
                                     {item.name}
                                     {
                                         item.poster_path ?
