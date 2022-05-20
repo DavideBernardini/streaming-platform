@@ -64,8 +64,6 @@ const MainPage = () => {
         fetchDramaTv();
         fetchRealityTv();
 
-        console.log(trendsMoviesOfWeek);
-
     }, [favUpdater, search, typeSearch]);
 
     const fetchSearch = async () => {
@@ -134,29 +132,38 @@ const MainPage = () => {
 
     // get trailer TODO: usare express
     const fetchTrailerMovie = (event) => {
-        console.log(event.target.parentElement.id);
 
         const APY_KEY = "c0af7194607876d6036970e4504abc6d";
         let urlTrailerYT = "https://www.youtube.com/embed/";
         let urlTrailer = 'https://api.themoviedb.org/3/movie/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
 
         axios.get(urlTrailer).then((response) => {
-            console.log(response.data.results[0].key);
-            setTrailer(urlTrailerYT + response.data.results[0].key);
+            
+            response.data.results.forEach(result => {
+                if (result.site === "YouTube")
+                    setTrailer(urlTrailerYT + result.key);
+                else
+                    setTrailer('https://www.youtube.com/embed/n3k2a35dBis');
+            });
+
         }
         );
 
     }
+
     const fetchTrailerTv = (event) => {
-        console.log(event.target.parentElement.id);
 
         const APY_KEY = "c0af7194607876d6036970e4504abc6d";
         let urlTrailerYT = "https://www.youtube.com/embed/";
         let urlTrailer = 'https://api.themoviedb.org/3/tv/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
 
         axios.get(urlTrailer).then((response) => {
-            console.log(response.data.results[0].key);
-            setTrailer(urlTrailerYT + response.data.results[0].key);
+            response.data.results.forEach(result => {
+                if (result.site === "YouTube")
+                    setTrailer(urlTrailerYT + result.key);
+                else
+                    setTrailer('https://www.youtube.com/embed/n3k2a35dBis');
+            });
         }
         );
 
@@ -312,6 +319,9 @@ const MainPage = () => {
                 searchResults={searchResults}
                 getTypeSelect={getTypeSelect}
                 getQuerySearch={getQuerySearch}
+                addFavourite={addFavourite}
+                trailer={trailer}
+                fetchTrailer={fetchTrailerMovie}
             />
 
 

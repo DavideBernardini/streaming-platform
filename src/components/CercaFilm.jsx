@@ -24,9 +24,23 @@ const CercaFilm = (props) => {
                                     {item.title}
                                     {
                                         item.poster_path ?
-                                            <CardFilm style={{ width: '100%', height: '100%' }} key={index} name={item.title} img={"https://image.tmdb.org/t/p/original" + item.poster_path} fetchTrailer={props.fetchTrailer} trailer={props.trailer} overview={props.overview} addFavourite={props.addFavourite} />
+                                            <CardFilm style={{ width: '100%', height: '100%' }} 
+                                            key={index} name={item.title} 
+                                            img={"https://image.tmdb.org/t/p/original" + item.poster_path} 
+                                            fetchTrailer={props.fetchTrailer} 
+                                            trailer={props.trailer} 
+                                            overview={props.overview} 
+                                            addFavourite={props.addFavourite} 
+                                            />
                                             :
-                                            <CardFilm style={{ width: '100%', height: '100%' }} key={index} name={item.title} img={require("../images/test-foto.jpg")} fetchTrailer={props.fetchTrailer} trailer={props.trailer} overview={props.overview} addFavourite={props.addFavourite} />
+                                            <CardFilm style={{ width: '100%', height: '100%' }} 
+                                            key={index} 
+                                            name={item.title} 
+                                            img={require("../images/test-foto.jpg")} 
+                                            fetchTrailer={props.fetchTrailer} 
+                                            trailer={props.trailer} 
+                                            overview={props.overview} 
+                                            addFavourite={props.addFavourite} />
                                     }
                                 </Col>
                                 :
@@ -34,9 +48,25 @@ const CercaFilm = (props) => {
                                     {item.name}
                                     {
                                         item.poster_path ?
-                                            <CardFilm style={{ width: '100%', height: '100%' }} key={index} name={item.name} img={"https://image.tmdb.org/t/p/original" + item.poster_path} fetchTrailer={props.fetchTrailer} trailer={props.trailer} overview={props.overview} addFavourite={props.addFavourite} />
+                                            <CardFilm style={{ width: '100%', height: '100%' }} 
+                                            key={index} 
+                                            name={item.name} 
+                                            img={"https://image.tmdb.org/t/p/original" + item.poster_path} 
+                                            fetchTrailer={props.fetchTrailer} 
+                                            trailer={props.trailer} 
+                                            overview={props.overview} 
+                                            addFavourite={props.addFavourite} 
+                                            />
                                             :
-                                            <CardFilm style={{ width: '100%', height: '100%' }} key={index} name={item.name} img={require("../images/test-foto.jpg")} fetchTrailer={props.fetchTrailer} trailer={props.trailer} overview={props.overview} addFavourite={props.addFavourite} />
+                                            <CardFilm style={{ width: '100%', height: '100%' }} 
+                                            key={index} 
+                                            name={item.name} 
+                                            img={require("../images/test-foto.jpg")} 
+                                            fetchTrailer={props.fetchTrailer} 
+                                            trailer={props.trailer} 
+                                            overview={props.overview} 
+                                            addFavourite={props.addFavourite} 
+                                            />
                                     }
                                 </Col>
 

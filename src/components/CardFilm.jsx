@@ -40,8 +40,14 @@ const CardFilm = (props) => {
                         <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
                     <Form>
-                        <h3 className='fw-bold'>Descrizione</h3>
-                        <p>{props.overview}</p>
+                        {
+                            props.overview &&
+                            <>
+                                <h3 className='fw-bold'>Descrizione</h3>
+                                <p>{props.overview}</p>
+                            </>
+                        }
+
                     </Form>
                     <br></br>
                     <Button className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>
