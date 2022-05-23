@@ -134,38 +134,18 @@ const MainPage = () => {
     // get trailer TODO: usare express
     const fetchTrailerMovie = (event) => {
 
-        const APY_KEY = "c0af7194607876d6036970e4504abc6d";
-        let urlTrailerYT = "https://www.youtube.com/embed/";
-        let urlTrailer = 'https://api.themoviedb.org/3/movie/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
-
-        axios.get(urlTrailer).then((response) => {
-
-            response.data.results.forEach(result => {
-                if (result.site === "YouTube")
-                    setTrailer(urlTrailerYT + result.key);
-                else
-                    setTrailer('https://www.youtube.com/embed/n3k2a35dBis');
-            });
-
-        }
+        axios.get("http://localhost:2000/api/video/movie/" + event.target.parentElement.id).then((response) => {
+            setTrailer(response.data);
+            }
         );
 
     }
 
     const fetchTrailerTv = (event) => {
 
-        const APY_KEY = "c0af7194607876d6036970e4504abc6d";
-        let urlTrailerYT = "https://www.youtube.com/embed/";
-        let urlTrailer = 'https://api.themoviedb.org/3/tv/' + event.target.parentElement.id + '/videos?api_key=' + APY_KEY;
-
-        axios.get(urlTrailer).then((response) => {
-            response.data.results.forEach(result => {
-                if (result.site === "YouTube")
-                    setTrailer(urlTrailerYT + result.key);
-                else
-                    setTrailer('https://www.youtube.com/embed/n3k2a35dBis');
-            });
-        }
+        axios.get("http://localhost:2000/api/video/tv/" + event.target.parentElement.id).then((response) => {
+            setTrailer(response.data);
+            }
         );
 
     }
