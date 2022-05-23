@@ -4,24 +4,12 @@ import axios from "axios";
 import MoviesTvRow from "./MoviesTvRow";
 import CercaFilm from "./CercaFilm";
 import Footer from "./Footer"
+import urls from "../scripts/baseUrls";
+import ids from "../scripts/genresIds";
 import "../style/MainPage.scss";
 
 const MainPage = () => {
-    // base urls
-    const discoverMovieUrl = "http://localhost:2000/api/movie/search/";
-    const discoverTvUrl = "http://localhost:2000/api/tv/search/";
-    const urlTrendsMoviesWeek = "http://localhost:2000/api/movie/trends/movie/week";
-    const urlTrendsTvWeek = "http://localhost:2000/api/movie/trends/tv/week";
 
-    // ids
-    const idHorrorMovies = 27;
-    const idComedyMovies = 35;
-    const idAnimationMovies = 16;
-    const idActionMovies = 28;
-    const idFantasyTv = 10765;
-    const idComedyTv = 35;
-    const idDramaTv = 18;
-    const idRealityTv = 10764;
 
     // search results
     const [searchResults, setSearchResults] = useState([]);
@@ -77,56 +65,56 @@ const MainPage = () => {
     // fetch movies
     const fetchTrendsMovies = () => {
 
-        axios.get(urlTrendsMoviesWeek).then((response) => {
+        axios.get(urls.urlTrendsMoviesWeek).then((response) => {
             setTrendsMoviesOfWeek(response.data);
         });
     };
 
     const fetchHorrorMovies = () => {
-        axios.get(discoverMovieUrl + idHorrorMovies).then((response) => {
+        axios.get(urls.discoverMovieUrl + ids.idHorrorMovies).then((response) => {
             setHorrorMovies(response.data);
         });
     };
 
     const fetchComedyMovies = () => {
-        axios.get(discoverMovieUrl + idComedyMovies).then((response) => {
+        axios.get(urls.discoverMovieUrl + ids.idComedyMovies).then((response) => {
             setComedyMovies(response.data);
         });
     };
     const fetchActionMovies = () => {
-        axios.get(discoverMovieUrl + idActionMovies).then((response) => {
+        axios.get(urls.discoverMovieUrl + ids.idActionMovies).then((response) => {
             setActionMovies(response.data);
         });
     };
     const fetchAnimationMovies = () => {
-        axios.get(discoverMovieUrl + idAnimationMovies).then((response) => {
+        axios.get(urls.discoverMovieUrl + ids.idAnimationMovies).then((response) => {
             setAnimationMovies(response.data);
         });
     };
 
     // fetch tv shows
     const fetchTrendsTv = () => {
-        axios.get(urlTrendsTvWeek).then((response) => {
+        axios.get(urls.urlTrendsTvWeek).then((response) => {
             setTrendsTvOfWeek(response.data);
         });
     };
     const fetchFantasyTv = () => {
-        axios.get(discoverTvUrl + idFantasyTv).then((response) => {
+        axios.get(urls.discoverTvUrl + ids.idFantasyTv).then((response) => {
             setFantasyTv(response.data);
         });
     };
     const fetchComedyTv = () => {
-        axios.get(discoverTvUrl + idComedyTv).then((response) => {
+        axios.get(urls.discoverTvUrl + ids.idComedyTv).then((response) => {
             setComedyTv(response.data);
         });
     };
     const fetchDramaTv = () => {
-        axios.get(discoverTvUrl + idDramaTv).then((response) => {
+        axios.get(urls.discoverTvUrl + ids.idDramaTv).then((response) => {
             setDramaTv(response.data);
         });
     };
     const fetchRealityTv = () => {
-        axios.get(discoverTvUrl + idRealityTv).then((response) => {
+        axios.get(urls.discoverTvUrl + ids.idRealityTv).then((response) => {
             setRealityTv(response.data);
         });
     };
