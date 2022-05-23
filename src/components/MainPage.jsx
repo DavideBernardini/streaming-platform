@@ -134,19 +134,21 @@ const MainPage = () => {
     // get trailer TODO: usare express
     const fetchTrailerMovie = (event) => {
 
-        axios.get("http://localhost:2000/api/video/movie/" + event.target.parentElement.id).then((response) => {
-            setTrailer(response.data);
+        axios.get("http://localhost:2000/api/video/movie/" + event.target.parentElement.id)
+            .then((response) => {
+                setTrailer(response.data);
             }
-        );
+            );
 
     }
 
     const fetchTrailerTv = (event) => {
 
-        axios.get("http://localhost:2000/api/video/tv/" + event.target.parentElement.id).then((response) => {
-            setTrailer(response.data);
+        axios.get("http://localhost:2000/api/video/tv/" + event.target.parentElement.id)
+            .then((response) => {
+                setTrailer(response.data);
             }
-        );
+            );
 
     }
 
@@ -288,7 +290,7 @@ const MainPage = () => {
                 }
             }
         }
-     
+
         // filtro per i doppioni
         if (!favourites.includes(newFavourite)) {
             setFavourites([...favourites, newFavourite]);
