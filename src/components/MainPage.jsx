@@ -297,7 +297,18 @@ const MainPage = () => {
                     newFavourite = realityTv[i];
                 }
             }
+        } else if (searchResults.find((obj) => Number(obj.id) === Number(event.target.parentElement.id))
+        ) {
+            for (let i = 0; i < searchResults.length; i++) {
+                if (
+                    Number(searchResults[i].id) ===
+                    Number(event.target.parentElement.id)
+                ) {
+                    newFavourite = searchResults[i];
+                }
+            }
         }
+     
         // filtro per i doppioni
         if (!favourites.includes(newFavourite)) {
             setFavourites([...favourites, newFavourite]);
