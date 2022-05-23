@@ -134,22 +134,33 @@ const MainPage = () => {
     // get trailer TODO: usare express
     const fetchTrailerMovie = (event) => {
 
-        axios.get("http://localhost:2000/api/video/movie/" + event.target.parentElement.id)
-            .then((response) => {
-                setTrailer(response.data);
-            }
-            );
+        let newTrailer = ''
 
+        axios.get("http://localhost:2000/api/video/tv/" + event.target.parentElement.id)
+        .then((response) => {
+            newTrailer = response.data;
+        }
+        )
+
+        if (newTrailer === '')
+            newTrailer = "https://www.youtube.com/embed/8d0apIpKMh8";
+        
+        setTrailer(newTrailer);
     }
 
     const fetchTrailerTv = (event) => {
+        let newTrailer = ''
 
         axios.get("http://localhost:2000/api/video/tv/" + event.target.parentElement.id)
-            .then((response) => {
-                setTrailer(response.data);
-            }
-            );
+        .then((response) => {
+            newTrailer = response.data;
+        }
+        )
 
+        if (newTrailer === '')
+            newTrailer = "https://www.youtube.com/embed/8d0apIpKMh8";
+        
+        setTrailer(newTrailer);
     }
 
     // functions for search
@@ -290,7 +301,7 @@ const MainPage = () => {
                 }
             }
         }
-
+     
         // filtro per i doppioni
         if (!favourites.includes(newFavourite)) {
             setFavourites([...favourites, newFavourite]);
