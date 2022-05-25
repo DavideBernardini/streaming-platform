@@ -69,23 +69,33 @@ const CercaFilm = (props) => {
                                     {
                                         item.poster_path ?
                                             <CardFilm style={{ width: '100%', height: '100%' }}
-                                                key={index}
-                                                name={item.name}
-                                                img={"https://image.tmdb.org/t/p/original" + item.poster_path}
-                                                fetchTrailer={props.fetchTrailer}
-                                                trailer={props.trailer}
-                                                overview={props.overview}
-                                                addFavourite={props.addFavourite}
+                                            key={item.id}
+                                            id={item.id}
+                                            title={item.name}
+                                            img={item.poster_path ? "https://image.tmdb.org/t/p/original" + item.poster_path : require("../images/test-foto.jpg")}
+                                            year={item.release_date ? item.release_date.substring(0, 4) : ""}
+                                            overview={item.overview}
+                                            type={props.category}
+                                            addFavourite={props.addFavourite}
+                                            isFavourite={props.isFavourite}
+                                            removeFavourite={props.removeFavourite}
+                                            trailer={props.trailer}
+                                            fetchTrailer={props.fetchTrailer}
                                             />
                                             :
                                             <CardFilm style={{ width: '100%', height: '100%' }}
-                                                key={index}
-                                                name={item.name}
+                                                key={item.id}
+                                                id={item.id}
+                                                title={item.name}
                                                 img={require("../images/test-foto.jpg")}
-                                                fetchTrailer={props.fetchTrailer}
-                                                trailer={props.trailer}
-                                                overview={props.overview}
+                                                year={item.release_date ? item.release_date.substring(0, 4) : ""}
+                                                overview={item.overview}
+                                                type={props.category}
                                                 addFavourite={props.addFavourite}
+                                                isFavourite={props.isFavourite}
+                                                removeFavourite={props.removeFavourite}
+                                                trailer={props.trailer}
+                                                fetchTrailer={props.fetchTrailer}
                                             />
                                     }
                                 </Col>

@@ -41,10 +41,15 @@ const CardFilm = (props) => {
                     </Form>
                     <Form>
                         {
-                            props.overview &&
+                            props.overview?
                             <>
                                 <h3 className='fw-bold'>Descrizione</h3>
                                 <p>{props.overview}</p>
+                            </>
+                            :
+                            <>
+                                <h3 className='fw-bold'>Descrizione</h3>
+                                <p>Mi spiace, ma la descrizione non è disponibile 😥</p>
                             </>
                         }
 

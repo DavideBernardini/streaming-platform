@@ -56,10 +56,12 @@ const MainPage = () => {
     }, [favUpdater, search, typeSearch]);
 
     const fetchSearch = async () => {
-
-        axios.get(urlForSearch + search).then((response) => {
+        if (search !== "") {
+            const response = await axios.get(urlForSearch + search);
             setSearchResults(response.data);
-        });
+        } else {
+            setSearchResults([]);
+        }
     }
 
     // fetch movies
