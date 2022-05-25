@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Card, Button, Modal, Form } from 'react-bootstrap'
 import '../style/CardFilm.scss'
 import { MDBIcon } from 'mdb-react-ui-kit';
+import {FacebookShareButton ,WhatsappShareButton, LinkedinShareButton, RedditShareButton, FacebookMessengerShareButton, TelegramShareButton} from 'react-share';
+import {LinkedinIcon, FacebookIcon, WhatsappIcon, RedditIcon, FacebookMessengerIcon, TelegramIcon} from 'react-share';
 //
 // http://localhost:2000/api/title/search/:type/:query
 // localhost:2000/api/title/search/movie/spiderman
@@ -55,15 +57,54 @@ const CardFilm = (props) => {
 
                     </Form>
                     <br></br>
-                    <Button className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>
-                        <MDBIcon fab icon='facebook-f' />
-                    </Button>
-                    <Button className='m-1' style={{ backgroundColor: '#ac2bac' }} href='#'>
-                        <MDBIcon fab icon='instagram' />
-                    </Button>
-                    <Button className='m-1' style={{ backgroundColor: '#25d366' }} href='#'>
-                        <MDBIcon fab icon='whatsapp' />
-                    </Button>
+                    <WhatsappShareButton   
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <WhatsappIcon size={40} round />
+        
+                    </WhatsappShareButton>
+
+                    <TelegramShareButton   
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <TelegramIcon size={40} round />
+                    </TelegramShareButton>
+
+                    <FacebookShareButton 
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <FacebookIcon size={40} round />
+                    </FacebookShareButton>
+
+                    <FacebookMessengerShareButton
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <FacebookMessengerIcon size={40} round />
+                    </FacebookMessengerShareButton>
+
+                    <LinkedinShareButton   
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <LinkedinIcon size={40} round />
+                    </LinkedinShareButton>
+
+                    <RedditShareButton 
+                        url={props.trailer}
+                        quote={props.title}
+                        className="mx-2 pb-2"
+                    >
+                        <RedditIcon size={40} round />
+                    </RedditShareButton>
 
                 </Modal.Body>
             </Modal>
