@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Card, Button, Modal, Form } from 'react-bootstrap'
 import '../style/CardFilm.scss'
 import { MDBIcon } from 'mdb-react-ui-kit';
-import {FacebookShareButton ,WhatsappShareButton, LinkedinShareButton, RedditShareButton, FacebookMessengerShareButton, TelegramShareButton} from 'react-share';
-import {LinkedinIcon, FacebookIcon, WhatsappIcon, RedditIcon, FacebookMessengerIcon, TelegramIcon} from 'react-share';
+import {FacebookShareButton ,WhatsappShareButton, LinkedinShareButton, RedditShareButton,  TelegramShareButton} from 'react-share';
+import {LinkedinIcon, FacebookIcon, WhatsappIcon, RedditIcon, TelegramIcon} from 'react-share';
 //
 // http://localhost:2000/api/title/search/:type/:query
 // localhost:2000/api/title/search/movie/spiderman
@@ -81,14 +81,6 @@ const CardFilm = (props) => {
                     >
                         <FacebookIcon size={40} round />
                     </FacebookShareButton>
-
-                    <FacebookMessengerShareButton
-                        url={props.trailer}
-                        quote={props.title}
-                        className="mx-2 pb-2"
-                    >
-                        <FacebookMessengerIcon size={40} round />
-                    </FacebookMessengerShareButton>
 
                     <LinkedinShareButton   
                         url={props.trailer}
