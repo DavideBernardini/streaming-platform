@@ -53,7 +53,7 @@ const MainPage = () => {
         fetchDramaTv();
         fetchRealityTv();
 
-    }, [favUpdater, search, typeSearch, searchResults]);
+    }, [favUpdater, search, typeSearch]);
 
     const fetchSearch = async () => {
         if (search !== "") {
