@@ -21,12 +21,12 @@ const CardFilm = (props) => {
                 {!show &&
                     props.isFavourite ?
 
-                    <Button className="btn btn-danger button-card" onClick={props.removeFavourite} style={{ height: '37px', zIndex: 10 }}>
-                        Rimuovi dai Preferiti <MDBIcon fas icon="ban" />
+                    <Button className="btn btn-danger button-card remove-favourite text-danger" onClick={props.removeFavourite} style={{ height: '37px', zIndex: 10, backgroundColor: '#000', border: 'none', }}>
+                        Rimuovi dai Preferiti <MDBIcon fas icon="ban" className="text-danger"/>
                     </Button>
                     :
-                    <Button className="button-card favourite" variant="dark" onClick={props.addFavourite} style={{ height: '37px', color: '#fff', backgroundColor: '#000', border: 'none', }}>
-                        Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
+                    <Button className="button-card add-favourite" variant="dark" onClick={props.addFavourite} style={{ height: '37px', color: '#fff', backgroundColor: '#000', border: 'none', }}>
+                        Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-success" />
                     </Button>
                 }
 
