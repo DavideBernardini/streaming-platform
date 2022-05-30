@@ -67,15 +67,16 @@ const Navigatore = () => {
             <Outlet />
 
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+            <Modal show={show} onHide={handleClose} className="modal">
+                <Modal.Header closeButton className="bg-dark border-dark">
                     <Modal.Title>Form Login</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className="bg-dark">
                     <Form >
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Email</Form.Label>
                             <Form.Control
+                            className="bg-dark form"
                                 type="email"
                                 placeholder="name@example.com"
                                 autoFocus
@@ -84,6 +85,7 @@ const Navigatore = () => {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
+                                className="bg-dark form"
                                 type="password"
                                 placeholder="password"
                                 autoFocus
@@ -91,7 +93,7 @@ const Navigatore = () => {
                         </Form.Group>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer style={{ margin: "auto" }}>
+                <Modal.Footer className="bg-dark border-dark justify-content-center">
                     <Button onClick={()=>{handleClose(); handleShow2();}} variant="secondary">
                         Registrati
                     </Button>
