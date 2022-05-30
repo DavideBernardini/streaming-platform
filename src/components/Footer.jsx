@@ -4,6 +4,7 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 export default function Footer() {
   return (
     <MDBFooter bgColor='black' className='text-center text-lg-start text-muted'>
+      <div className="separator"></div>
       <section className='d-flex justify-content-center justify-content-lg-between p-4'>
         <div className='me-5 d-none d-lg-block'>
           <span>Get connected with us on social networks:</span>
