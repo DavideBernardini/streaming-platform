@@ -39,8 +39,10 @@ export default function Footer() {
                 <i className='fas fa-gem me-3'></i>GreenStream
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
+                Siamo una startup di 4 ragazzi appassionati di cinema e serie tv,
+                con la voglia di realizzare una piattaforma 
+                innovativa per lo streaming.
+                
               </p>
             </div>
 
