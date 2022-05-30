@@ -11,22 +11,22 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-facebook-f'></i>
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-twitter'></i>
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-google'></i>
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-instagram'></i>
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-linkedin'></i>
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='#' className='me-4 text-reset'>
                         <i className='fab fa-github'></i>
                     </a>
                 </div>
@@ -50,22 +50,22 @@ export default function Footer() {
                         <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Angular
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     React
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Vue
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Laravel
                                 </a>
                             </p>
@@ -74,22 +74,22 @@ export default function Footer() {
                         <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Staff</h6>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Menconi Alessandro
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Davide Bernardini
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Valerio Procaccianti
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='#' className='text-reset'>
                                     Loris Dal Santo
                                 </a>
                             </p>
@@ -117,7 +117,7 @@ export default function Footer() {
 
             <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
                 © 2021 Copyright:
-                <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
+                <a className='text-reset fw-bold' href='#https://mdbootstrap.com/'>
                     MDBootstrap.com
                 </a>
             </div>
