@@ -19,14 +19,18 @@ const Navigatore = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
         return () => (window.onscroll = null);
     };
-
+ 
     return (
         <>
         {
             isScrolled ?
             <Navbar bg="none" expand="lg" className="navbar scrolled flex-nowrap top-0 position-fixed w-100 py-1">
                 <Container fluid>
-                    <Navbar.Brand><h1 className="ms-0 ms-sm-3 ms-md-5 titolo " style={{ width: "300px", height: "auto", color: "#198754" }}>GreenStream</h1></Navbar.Brand>
+                    <Navbar.Brand>
+                        <h1 className="ms-0 ms-sm-3 ms-md-5 titolo pointer" style={{ width: "300px", height: "auto", color: "#198754" }}>
+                            GreenStream
+                            </h1>
+                        </Navbar.Brand>
                     <div id="navbarScroll">
                         <Nav
                             className="me-auto my-2 my-lg-0"

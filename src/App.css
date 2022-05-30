@@ -7,7 +7,12 @@
   line-height: 1.4;
   overflow: hidden;
 }
+
 .separator {
   background-color: #146941c2;
   height: 8px;
+}
+
+.pointer {
+  cursor: pointer;
 }

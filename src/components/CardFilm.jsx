@@ -14,7 +14,7 @@ const CardFilm = (props) => {
 
     return (
         <>
-            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative">
+            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative pointer">
                 <Card.Img onClick={handleShow} style={{ width: '100%', height: '413px' }} className="hoverCard border-radious-bottom" variant="top" src={props.img} alt="immagine" />
 
 

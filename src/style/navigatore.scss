@@ -1,16 +1,20 @@
 .navbar {
   z-index: 1000;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   h1 {
     font-size: 50px;
     font-weight: bolder;
+    a {
+      color: #198754;
+      text-decoration: none;
+    }
   }
 }
 .navbar.scrolled {   
   position: fixed;   
   top: 0px;   
   background-color: black;   
-  transition: all 0.5s ease; 
+  transition: all 0.2s ease; 
 }
 
 .hero {

@@ -5,10 +5,10 @@ import '../style/CercaFilm.scss';
 const CercaFilm = (props) => {
     return (
         <div className="text-center">
-            <div className="search">
-                <Form.Select style={{ width: '120px', textAlign: 'center', margin: 'auto', padding: '7px' }} onChange={props.getTypeSelect} className="me-2">
-                    <option value="movie">Film</option>
-                    <option value="tv">Serie Tv</option>
+            <div className="search p-3 bg-black">
+                <Form.Select style={{ width: '120px', textAlign: 'center', margin: 'auto', padding: '7px' }} onChange={props.getTypeSelect} className="me-2 pointer">
+                    <option value="movie" className="pointer">Film</option>
+                    <option value="tv" className="pointer">Serie Tv</option>
                 </Form.Select>
 
                 <input type="text" style={{ width: '250px', textAlign: 'center', margin: 'auto', padding: '7px' }} placeholder="Cerca Film e Serie TV" onChange={props.getQuerySearch} />
