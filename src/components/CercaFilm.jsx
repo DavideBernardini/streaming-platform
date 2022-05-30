@@ -25,7 +25,7 @@ const CercaFilm = (props) => {
                             item.title ?
 
                                 <Col className="d-flex flex-column align-items-center mb-3" key={index}>
-                                    {item.title}
+                                    
                                     {
                                         item.poster_path ?
                                             <CardFilm style={{ width: '100%', height: '100%' }}
@@ -65,7 +65,7 @@ const CercaFilm = (props) => {
                                 </Col>
                                 :
                                 <Col className="d-flex flex-column align-items-center mb-3" key={index}>
-                                    {item.name}
+                                    
                                     {
                                         item.poster_path ?
                                             <CardFilm style={{ width: '100%', height: '100%' }}

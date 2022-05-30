@@ -1,9 +1,19 @@
 .hoverCard:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
     transform: scale(1.05);
-    
+
 }
-.divBottoni{
+
+.button-card {
+    height: 37px;
+    position: absolute;
+    bottom: 6%;
+    width: 318.2px;
+}
+
+.divBottoni {
     display: none;
 }

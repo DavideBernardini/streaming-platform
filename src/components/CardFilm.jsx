@@ -14,18 +14,18 @@ const CardFilm = (props) => {
 
     return (
         <>
-            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer}>
-                <Card.Img onClick={handleShow} style={{ width: '100%', height: '100%' }} className="hoverCard" variant="top" src={props.img} alt="immagine" />
+            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative">
+                <Card.Img onClick={handleShow} style={{ width: '100%', height: '413px' }} className="hoverCard " variant="top" src={props.img} alt="immagine" />
 
 
                 {!show &&
                     props.isFavourite ?
 
-                    <Button className="btn btn-danger" onClick={props.removeFavourite}>
+                    <Button className="btn btn-danger button-card" onClick={props.removeFavourite} style={{ height: '37px', zIndex: 10 }}>
                         Rimuovi dai Preferiti <MDBIcon fas icon="ban" />
                     </Button>
                     :
-                    <Button className="btn btn-light" onClick={props.addFavourite}>
+                    <Button className="btn btn-light button-card" onClick={props.addFavourite} style={{ height: '37px' }}>
                         Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
                     </Button>
                 }
