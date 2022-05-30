@@ -5,7 +5,7 @@ import Banner2 from "./Banner2";
 import Banner3 from "./Banner3";
 import Banner4 from "./Banner4";
 import Footer from "./Footer";
-import '../style/Navigatore.scss'
+import '../style/navigatore.scss'
 
 const LandingPage = () => {
     return (
