@@ -1,17 +1,17 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CardFilm from "./CardFilm";
-
+import '../style/CercaFilm.scss';
 
 const CercaFilm = (props) => {
     return (
         <div className="text-center">
-            <div className="d-flex flex-column" style={{zIndex: 10000}}>
-                <Form.Select className="mb-3" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} onChange={props.getTypeSelect}>
+            <div className="search">
+                <Form.Select style={{ width: '120px', textAlign: 'center', margin: 'auto', padding: '7px' }} onChange={props.getTypeSelect} className="me-2">
                     <option value="movie">Film</option>
                     <option value="tv">Serie Tv</option>
                 </Form.Select>
 
-                <input type="text" style={{ width: '200px', textAlign: 'center', margin: 'auto', padding: '5px' }} placeholder="Search" onChange={props.getQuerySearch} />
+                <input type="text" style={{ width: '250px', textAlign: 'center', margin: 'auto', padding: '7px' }} placeholder="Cerca Film e Serie TV" onChange={props.getQuerySearch} />
             </div>
 
 

@@ -1,20 +1,40 @@
 .contenitoreGrande {
-    margin-top: 294px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.profili{
+
+.contenitoreGrande::after {
+    content: '';
+    position: fixed;
+    width: 150px;
+    height: 80px;
+    top: 0;
+    right: 0;
+    background-color: #000;
+    z-index: 3000;
+
+}
+
+.profili {
     display: inline;
 }
-.profileList{
-        justify-content: center;
+
+.profileList {
+    justify-content: center;
+    display: flex;
+
+    li {
         display: flex;
-        li{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 15px;
-            img{
-                border-radius: 8px;
-            }
+        flex-direction: column;
+        align-items: center;
+        margin-right: 15px;
+
+        img {
+            border-radius: 8px;
         }
-   
+    }
+
 }

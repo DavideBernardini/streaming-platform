@@ -6,6 +6,7 @@ const SelectUtente = () => {
     return (
         <>
             <div className="contenitoreGrande text-center" >
+                
                 <div className="profili">
                     <h1>Chi vuole Guardare GreenStream?</h1>
                         <ul className='profileList'>

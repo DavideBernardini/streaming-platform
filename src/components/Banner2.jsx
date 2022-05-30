@@ -13,7 +13,7 @@ const Banner2 = () => {
                     <img className='mobile' src="https://mr.comingsoon.it/imgdb/locandine/big/61235.jpg"alt="mobile" />
 
                     <div className="download-card">
-                        <img   src="https://www.exibart.com/repository/media/2019/08/milanese-imbruttito1.jpg" alt="stranger things thunb" />
+                        <img   src="https://www.exibart.com/repository/media/2019/08/milanese-imbruttito1.jpg" alt="imbruttito thunb" />
 
                         <div className='ms-4 me-5'>Download in corso...</div>
 
