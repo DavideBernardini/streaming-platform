@@ -12,8 +12,14 @@
     position: absolute;
     bottom: 6%;
     width: 318.2px;
+    
 }
-
+.button-card.favourite:focus {
+    box-shadow: none !important;
+}
+.modal > * {
+    color: #fff;
+}
 .divBottoni {
     display: none;
 }

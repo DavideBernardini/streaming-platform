@@ -15,7 +15,7 @@ const CardFilm = (props) => {
     return (
         <>
             <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative">
-                <Card.Img onClick={handleShow} style={{ width: '100%', height: '413px' }} className="hoverCard " variant="top" src={props.img} alt="immagine" />
+                <Card.Img onClick={handleShow} style={{ width: '100%', height: '413px' }} className="hoverCard border-radious-bottom" variant="top" src={props.img} alt="immagine" />
 
 
                 {!show &&
@@ -25,7 +25,7 @@ const CardFilm = (props) => {
                         Rimuovi dai Preferiti <MDBIcon fas icon="ban" />
                     </Button>
                     :
-                    <Button className="btn btn-light button-card" onClick={props.addFavourite} style={{ height: '37px' }}>
+                    <Button className="button-card favourite" variant="dark" onClick={props.addFavourite} style={{ height: '37px', color: '#fff', backgroundColor: '#000', border: 'none', }}>
                         Aggiungi ai Preferiti <MDBIcon fas icon='heart' className="text-danger" />
                     </Button>
                 }
@@ -33,11 +33,11 @@ const CardFilm = (props) => {
 
 
             </Card>
-            <Modal size='lg' show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.title}</Modal.Title>
+            <Modal size='lg' show={show} onHide={handleClose} className="modal">
+                <Modal.Header closeButton className="bg-dark border-dark text-center">
+                    <Modal.Title className="bg-dark border-dark fs-2">{props.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className="bg-dark"> 
                     <Form>
                         <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
@@ -45,7 +45,7 @@ const CardFilm = (props) => {
                         {
                             props.overview?
                             <>
-                                <h3 className='fw-bold'>Descrizione</h3>
+                                <div className='fw-bold fs-3 fw-bold'>Descrizione</div>
                                 <p>{props.overview}</p>
                             </>
                             :
