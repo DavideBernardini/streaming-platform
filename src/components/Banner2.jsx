@@ -7,13 +7,13 @@ const Banner2 = () => {
 
     return (
         <Container>
-            <Row  xs={1} md={1} lg={2} className="banner-rt d-flex align-items-md-center">
+            <Row xs={1} md={1} lg={2} className="banner-rt d-flex align-items-md-center">
 
-                <Col xs={{order: 2}} lg={{order: 1}} className="banner-rt_image">
-                    <img className='mobile' src="https://mr.comingsoon.it/imgdb/locandine/big/61235.jpg"alt="mobile" />
+                <Col xs={{ order: 2 }} lg={{ order: 1 }} className="banner-rt_image">
+                    <img className='mobile' src="https://mr.comingsoon.it/imgdb/locandine/big/61235.jpg" alt="mobile" />
 
                     <div className="download-card">
-                        <img   src="https://www.exibart.com/repository/media/2019/08/milanese-imbruttito1.jpg" alt="imbruttito thunb" />
+                        <img src="https://www.exibart.com/repository/media/2019/08/milanese-imbruttito1.jpg" alt="imbruttito thunb" />
 
                         <div className='ms-4 me-5'>Download in corso...</div>
 
@@ -21,7 +21,7 @@ const Banner2 = () => {
                     </div>
                 </Col>
 
-                <Col xs={{order: 1}} s={{order: 1}} lg={{order: 2}} className="banner-rt_text">
+                <Col xs={{ order: 1 }} s={{ order: 1 }} lg={{ order: 2 }} className="banner-rt_text">
                     <div>
                         <h2 className='testiTitolo'>
                             Scarica i tuoi film da guardare offline.

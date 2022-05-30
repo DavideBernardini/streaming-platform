@@ -20,7 +20,7 @@ const Banner3 = () => {
                 <Col className="banner-lt_image">
                     <img src={require("../images/device-pile.png")} alt="tv" />
 
-                    <video style={{paddingBottom:"60px"}} width={"auto"} id="tv_clip2" autoPlay={true} muted="" loop="100" playsInline="">
+                    <video style={{ paddingBottom: "60px" }} width={"auto"} id="tv_clip2" autoPlay={true} muted="" loop="100" playsInline="">
                         <source src={require("../videos/video1.mp4")} type="video/mp4" />
                     </video>
                 </Col>

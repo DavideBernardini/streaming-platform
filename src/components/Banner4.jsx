@@ -9,11 +9,11 @@ const Banner4 = () => {
         <Container>
             <Row xs={1} md={1} lg={2} className="banner-rt kids d-flex align-items-md-center">
 
-                <Col xs={{order: 2}} lg={{order: 1}} className="banner-rt_image">
+                <Col xs={{ order: 2 }} lg={{ order: 1 }} className="banner-rt_image">
                     <img src={require("../images/kidsValueProp.png")} alt="kids" />
                 </Col>
 
-                <Col xs={{order: 1}} lg={{order: 2}} className="banner-rt_text">
+                <Col xs={{ order: 1 }} lg={{ order: 2 }} className="banner-rt_text">
                     <div>
                         <h2 className='testiTitolo'>
                             Crea profili per i bambini.

@@ -7,6 +7,7 @@ import Footer from "./Footer"
 import urls from "../scripts/baseUrls";
 import ids from "../scripts/genresIds";
 import "../style/MainPage.scss";
+import MainHero from "./MainHero";
 
 const MainPage = () => {
 
@@ -286,9 +287,20 @@ const MainPage = () => {
     const removeFavourite = (event) => {
 
         const myVect = [...favourites];
-        let index = myVect.indexOf(event.target.parentElement);
-        myVect.splice(index, 1);
+        let elementToRemove = null;
 
+        for (let i = 0; i < myVect.length; i++) {
+            if (
+                Number(myVect[i].id) ===
+                Number(event.target.parentElement.id)
+            ) {
+                elementToRemove = myVect[i];
+            }
+        }
+        let index = myVect.indexOf(elementToRemove);
+        myVect.splice(index, 1);
+        console.log(myVect);
+        console.log(index);
         setFavourites(myVect);
     };
 
@@ -301,12 +313,19 @@ const MainPage = () => {
                 addFavourite={addFavourite}
                 trailer={trailer}
                 fetchTrailer={fetchTrailerMovie}
+                search={search}
             />
 
             {
                 search === "" &&
                 <>
+                    {
+                        trendsMoviesOfWeek &&
+                        <MainHero movie={trendsMoviesOfWeek[0]} />
+                    }
+
                     {favourites.length > 0 && (
+
                         <MoviesTvRow
                             category="I tuoi preferiti"
                             moviesOrTv={favourites}
@@ -395,8 +414,6 @@ const MainPage = () => {
                 </>
 
             }
-
-
 
             <Footer></Footer>
         </div>

@@ -23,8 +23,8 @@ const LandingPage = () => {
             <Banner3 />
             <div className="separator"></div>
             <Banner4 />
-            
-            <Footer/>
+
+            <Footer />
         </div>
     )
 }

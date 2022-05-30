@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Card, Button, Modal, Form } from 'react-bootstrap'
 import '../style/CardFilm.scss'
 import { MDBIcon } from 'mdb-react-ui-kit';
-import {FacebookShareButton ,WhatsappShareButton, LinkedinShareButton, RedditShareButton,  TelegramShareButton} from 'react-share';
-import {LinkedinIcon, FacebookIcon, WhatsappIcon, RedditIcon, TelegramIcon} from 'react-share';
+import { FacebookShareButton, WhatsappShareButton, LinkedinShareButton, RedditShareButton, TelegramShareButton } from 'react-share';
+import { LinkedinIcon, FacebookIcon, WhatsappIcon, RedditIcon, TelegramIcon } from 'react-share';
 //
 // http://localhost:2000/api/title/search/:type/:query
 // localhost:2000/api/title/search/movie/spiderman
@@ -14,7 +14,7 @@ const CardFilm = (props) => {
 
     return (
         <>
-            <Card style={{ width: '20rem', height: '30rem' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative pointer">
+            <Card style={{ width: '285px', height: '445px' }} id={props.id} onClick={props.fetchTrailer} className="bg-black overflow-hidden position-relative pointer">
                 <Card.Img onClick={handleShow} style={{ width: '100%', height: '413px' }} className="hoverCard border-radious-bottom" variant="top" src={props.img} alt="immagine" />
 
 
@@ -22,7 +22,7 @@ const CardFilm = (props) => {
                     props.isFavourite ?
 
                     <Button className="btn btn-danger button-card fw-bold remove-favourite text-danger" onClick={props.removeFavourite} style={{ height: '37px', zIndex: 10, backgroundColor: '#000', border: 'none', }}>
-                        Rimuovi dai Preferiti <MDBIcon fas icon="ban" className="text-danger"/>
+                        Rimuovi dai Preferiti <MDBIcon fas icon="ban" className="text-danger" />
                     </Button>
                     :
                     <Button className="button-card fw-bold add-favourite" variant="dark" onClick={props.addFavourite} style={{ height: '37px', color: '#fff', backgroundColor: '#000', border: 'none', }}>
@@ -33,40 +33,44 @@ const CardFilm = (props) => {
 
 
             </Card>
-            <Modal size='lg' show={show} onHide={handleClose} className="modal">
+            <Modal
+                size='lg'
+                show={show}
+                onHide={handleClose}
+                className="modal">
                 <Modal.Header closeButton className="bg-dark border-dark text-center">
                     <Modal.Title className="bg-dark border-dark fs-2">{props.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="bg-dark"> 
+                <Modal.Body className="bg-dark">
                     <Form>
-                        <iframe width="100%" height="500" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe width="100%" height="400" src={props.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </Form>
                     <Form>
                         {
-                            props.overview?
-                            <>
-                                <div className='fw-bold fs-3 fw-bold'>Descrizione</div>
-                                <p>{props.overview}</p>
-                            </>
-                            :
-                            <>
-                                <h3 className='fw-bold'>Descrizione</h3>
-                                <p>Mi spiace, ma la descrizione non è disponibile 😥</p>
-                            </>
+                            props.overview ?
+                                <>
+                                    <div className='fw-bold fs-3 fw-bold'>Descrizione</div>
+                                    <p className="pt-2">{props.overview}</p>
+                                </>
+                                :
+                                <>
+                                    <h3 className='fw-bold fs-3 fw-bold'>Descrizione</h3>
+                                    <p className="pt-2">Mi spiace, ma la descrizione non è disponibile 😥</p>
+                                </>
                         }
 
                     </Form>
                     <br></br>
-                    <WhatsappShareButton   
+                    <WhatsappShareButton
                         url={props.trailer}
                         quote={props.title}
                         className="mx-2 pb-2"
                     >
                         <WhatsappIcon size={40} round />
-        
+
                     </WhatsappShareButton>
 
-                    <TelegramShareButton   
+                    <TelegramShareButton
                         url={props.trailer}
                         quote={props.title}
                         className="mx-2 pb-2"
@@ -74,7 +78,7 @@ const CardFilm = (props) => {
                         <TelegramIcon size={40} round />
                     </TelegramShareButton>
 
-                    <FacebookShareButton 
+                    <FacebookShareButton
                         url={props.trailer}
                         quote={props.title}
                         className="mx-2 pb-2"
@@ -82,7 +86,7 @@ const CardFilm = (props) => {
                         <FacebookIcon size={40} round />
                     </FacebookShareButton>
 
-                    <LinkedinShareButton   
+                    <LinkedinShareButton
                         url={props.trailer}
                         quote={props.title}
                         className="mx-2 pb-2"
@@ -90,7 +94,7 @@ const CardFilm = (props) => {
                         <LinkedinIcon size={40} round />
                     </LinkedinShareButton>
 
-                    <RedditShareButton 
+                    <RedditShareButton
                         url={props.trailer}
                         quote={props.title}
                         className="mx-2 pb-2"

@@ -9,7 +9,7 @@ const SelectUtente = () => {
                 
                 <div className="profili">
                     <h1>Chi vuole Guardare GreenStream?</h1>
-                        <ul className='profileList'>
+                        <ul className='profileList flex-wrap'>
                             <li >
                                 <Link to="/mainPage"><img src={require("../images/avatar1.png")} alt="profile thumb"></img></Link>
                                 <div className='fs-4 fw-bold'>Alessandro</div>

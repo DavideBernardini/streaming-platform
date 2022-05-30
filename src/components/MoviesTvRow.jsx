@@ -19,23 +19,30 @@ const MoviesTvRow = (props) => {
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1350,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 1145,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    initialSlide: 1
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 840,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 622,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -45,7 +52,7 @@ const MoviesTvRow = (props) => {
     };
     return (
 
-        <Container fluid  style={{padding:'30px'}}  >
+        <Container fluid style={{ padding: '30px' }}  >
             <div className="fs-2 fw-bold mb-2 ms-2">{props.category}</div>
             {
                 props.moviesOrTv ?
@@ -75,28 +82,28 @@ const MoviesTvRow = (props) => {
                                 props.moviesOrTv.map(tv => {
                                     return (
                                         <CardFilm
-                                        key={tv.id}
-                                        id={tv.id}
-                                        title={tv.name}
-                                        img={tv.poster_path ? "https://image.tmdb.org/t/p/original" + tv.poster_path : require("../images/test-foto.jpg")}
-                                        year={tv.release_date ? tv.release_date.substring(0, 4) : ""}
-                                        overview={tv.overview}
-                                        type={props.category}
-                                        addFavourite={props.addFavourite}
-                                        isFavourite={props.isFavourite}
-                                        removeFavourite={props.removeFavourite}
-                                        trailer={props.trailer}
-                                        fetchTrailer={props.fetchTrailer}
-                                    />
+                                            key={tv.id}
+                                            id={tv.id}
+                                            title={tv.name}
+                                            img={tv.poster_path ? "https://image.tmdb.org/t/p/original" + tv.poster_path : require("../images/test-foto.jpg")}
+                                            year={tv.release_date ? tv.release_date.substring(0, 4) : ""}
+                                            overview={tv.overview}
+                                            type={props.category}
+                                            addFavourite={props.addFavourite}
+                                            isFavourite={props.isFavourite}
+                                            removeFavourite={props.removeFavourite}
+                                            trailer={props.trailer}
+                                            fetchTrailer={props.fetchTrailer}
+                                        />
                                     )
                                 })
                         }
 
                     </Slider>
                     : <div className="my-5 text-center">
-                        <Spinner animation="grow" variant="success"/>
+                        <Spinner animation="grow" variant="success" />
                     </div>
-                    
+
             }
         </Container>
     );

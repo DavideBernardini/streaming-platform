@@ -1,11 +1,12 @@
 .navbar {
-  z-index: 1000;
+  z-index: 100;
   transition: all 0.2s ease;
   h1 {
     font-size: 50px;
     font-weight: bolder;
+    
     a {
-      color: #198754;
+      color: #209a61;
       text-decoration: none;
     }
   }
