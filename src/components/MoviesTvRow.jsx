@@ -11,7 +11,7 @@ import CardFilm from "./CardFilm";
 
 const MoviesTvRow = (props) => {
     var settings = {
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 5,
