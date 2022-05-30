@@ -1,6 +1,10 @@
 .navbar {
   z-index: 1000;
   transition: all 0.5s ease;
+  h1 {
+    font-size: 50px;
+    font-weight: bolder;
+  }
 }
 .navbar.scrolled {   
   position: fixed;   
