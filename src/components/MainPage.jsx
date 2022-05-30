@@ -307,7 +307,7 @@ const MainPage = () => {
             {/* movie rows */}
             {favourites.length > 0 && (
                 <MoviesTvRow
-                    category="Preferiti"
+                    category="I tuoi preferiti"
                     moviesOrTv={favourites}
                     removeFavourite={removeFavourite}
                     isFavourite={true}
@@ -317,8 +317,9 @@ const MainPage = () => {
                 />
             )}
             {/* movie rows */}
+            <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">I Film</h2>
             <MoviesTvRow
-                category="TrendsMovie:"
+                category="I più visti della settimana:"
                 moviesOrTv={trendsMoviesOfWeek}
                 addFavourite={addFavourite}
                 trailer={trailer}
@@ -354,8 +355,9 @@ const MainPage = () => {
             />
 
             {/* tv rows */}
+            <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">Le Serie TV</h2>
             <MoviesTvRow
-                category="TrendsTv:"
+                category="Le più viste della settimana:"
                 moviesOrTv={trendsTvOfWeek}
                 addFavourite={addFavourite}
                 trailer={trailer}
