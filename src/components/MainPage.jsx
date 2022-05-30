@@ -303,94 +303,101 @@ const MainPage = () => {
                 fetchTrailer={fetchTrailerMovie}
             />
 
+            {
+                search === "" &&
+                <>
+                    {favourites.length > 0 && (
+                        <MoviesTvRow
+                            category="I tuoi preferiti"
+                            moviesOrTv={favourites}
+                            removeFavourite={removeFavourite}
+                            isFavourite={true}
+                            addFavourite={addFavourite}
+                            trailer={trailer}
+                            fetchTrailer={fetchTrailerMovie}
+                        />
+                    )}
+                    {/* movie rows */}
+                    <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">I Film</h2>
+                    <MoviesTvRow
+                        category="I più visti della settimana:"
+                        moviesOrTv={trendsMoviesOfWeek}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerMovie}
+                    />
+                    <MoviesTvRow
+                        category="Commedie:"
+                        moviesOrTv={comedyMovies}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerMovie}
+                    />
+                    <MoviesTvRow
+                        category="Horror:"
+                        moviesOrTv={horrorMovies}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerMovie}
+                    />
+                    <MoviesTvRow
+                        category="Animazione:"
+                        moviesOrTv={animationMovies}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerMovie}
+                    />
+                    <MoviesTvRow
+                        category="Azione:"
+                        moviesOrTv={actionMovies}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerMovie}
+                    />
 
-            {/* movie rows */}
-            {favourites.length > 0 && (
-                <MoviesTvRow
-                    category="I tuoi preferiti"
-                    moviesOrTv={favourites}
-                    removeFavourite={removeFavourite}
-                    isFavourite={true}
-                    addFavourite={addFavourite}
-                    trailer={trailer}
-                    fetchTrailer={fetchTrailerMovie}
-                />
-            )}
-            {/* movie rows */}
-            <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">I Film</h2>
-            <MoviesTvRow
-                category="I più visti della settimana:"
-                moviesOrTv={trendsMoviesOfWeek}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerMovie}
-            />
-            <MoviesTvRow
-                category="Commedie:"
-                moviesOrTv={comedyMovies}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerMovie}
-            />
-            <MoviesTvRow
-                category="Horror:"
-                moviesOrTv={horrorMovies}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerMovie}
-            />
-            <MoviesTvRow
-                category="Animazione:"
-                moviesOrTv={animationMovies}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerMovie}
-            />
-            <MoviesTvRow
-                category="Azione:"
-                moviesOrTv={actionMovies}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerMovie}
-            />
+                    {/* tv rows */}
+                    <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">Le Serie TV</h2>
+                    <MoviesTvRow
+                        category="Le più viste della settimana:"
+                        moviesOrTv={trendsTvOfWeek}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerTv}
+                    />
+                    <MoviesTvRow
+                        category="Fantascienza e Fantasy:"
+                        moviesOrTv={fantasyTv}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerTv}
+                    />
+                    <MoviesTvRow
+                        category="Commedie:"
+                        moviesOrTv={comedyTv}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerTv}
+                    />
+                    <MoviesTvRow
+                        category="Drama:"
+                        moviesOrTv={dramaTv}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerTv}
+                    />
+                    <MoviesTvRow
+                        category="Reality:"
+                        moviesOrTv={realityTv}
+                        addFavourite={addFavourite}
+                        trailer={trailer}
+                        fetchTrailer={fetchTrailerTv}
+                    />
+                </>
 
-            {/* tv rows */}
-            <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">Le Serie TV</h2>
-            <MoviesTvRow
-                category="Le più viste della settimana:"
-                moviesOrTv={trendsTvOfWeek}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerTv}
-            />
-            <MoviesTvRow
-                category="Fantascienza e Fantasy:"
-                moviesOrTv={fantasyTv}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerTv}
-            />
-            <MoviesTvRow
-                category="Commedie:"
-                moviesOrTv={comedyTv}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerTv}
-            />
-            <MoviesTvRow
-                category="Drama:"
-                moviesOrTv={dramaTv}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerTv}
-            />
-            <MoviesTvRow
-                category="Reality:"
-                moviesOrTv={realityTv}
-                addFavourite={addFavourite}
-                trailer={trailer}
-                fetchTrailer={fetchTrailerTv}
-            />
+            }
+
+
+
             <Footer></Footer>
         </div>
     );
