@@ -53,7 +53,7 @@ const MoviesTvRow = (props) => {
     return (
 
         <Container fluid style={{ padding: '30px' }}  >
-            <div className="fs-2 fw-bold mb-2 ms-2">{props.category}</div>
+            <div className="fs-2 fw-bold mb-3 ms-2">{props.category}</div>
             {
                 props.moviesOrTv ?
                     <Slider {...settings}>

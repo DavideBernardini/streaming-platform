@@ -375,7 +375,7 @@ const MainPage = () => {
                     />
 
                     {/* tv rows */}
-                    <h2 className="m-0 ms-4 ps-3 fs-1 fw-bolder text-white ">Le Serie TV</h2>
+                    <h2 className="m-0 ms-4 mt-3 ps-3 fs-1 fw-bolder text-white ">Le Serie TV</h2>
                     <MoviesTvRow
                         category="Le più viste della settimana:"
                         moviesOrTv={trendsTvOfWeek}
