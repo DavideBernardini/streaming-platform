@@ -1,10 +1,9 @@
 .main-hero {
     height: 700px;
     position: relative;
-    margin-top: -38px;
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     &_content {
         z-index: 10;
         width: 60%;
